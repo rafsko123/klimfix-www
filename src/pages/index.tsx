@@ -1,10 +1,15 @@
 import * as React    from "react";
 import type {HeadFC} from "gatsby";
+import About         from "../sections/homepage/About";
+import HeroSlider    from "../sections/homepage/HeroSlider";
 
 
 const IndexPage = () => {
   return (
-    <p>Hello gatsby homepage</p>
+    <>
+      <HeroSlider/>
+      <About/>
+    </>
   );
 };
 

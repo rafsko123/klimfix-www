@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Mitr', sans-serif;
         font-size: 16px;
     }
 

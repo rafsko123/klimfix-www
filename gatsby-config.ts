@@ -1,5 +1,6 @@
 import type {GatsbyConfig} from "gatsby";
 
+
 const path = require("path");
 require("dotenv").config();
 
@@ -23,13 +24,13 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Klimfix`,
-        short_name: `Klimfix`,
-        start_url: `/`,
+        name:             `Klimfix`,
+        short_name:       `Klimfix`,
+        start_url:        `/`,
         background_color: `#fff`,
-        theme_color: `#00C9FF`,
-        display: `standalone`,
-        icon: `src/assets/icon.png`, // This path is relative to the root of the site.
+        theme_color:      `#00C9FF`,
+        display:          `standalone`,
+        icon:             `src/assets/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -37,7 +38,7 @@ const config: GatsbyConfig = {
       options: {
         fonts:   [
           `Poppins\:200,300,400,600,700,800,900`,
-          `Mitr\:200,300,400,600,700,800,900`,
+          `Mitr\:200,300,400,500,600,700,800,900`,
 
         ],
         display: "swap",

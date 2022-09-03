@@ -9,6 +9,10 @@ export const MainTheme = {
     white: "#ffffff",
     pink:  "#E71C89;",
   },
+  fontFamily: {
+    primary: 'Poppins, sans-serif',
+    secondary: 'Mitr, sans-serif',
+  },
   fonts:           {
     desktop: {
       xl: "96px",
