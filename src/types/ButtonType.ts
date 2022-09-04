@@ -1,3 +1,6 @@
+import {ReactNode} from "react";
+
+
 export interface ButtonType {
   to?: string;
   type?: string;
@@ -7,4 +10,5 @@ export interface ButtonType {
   disabled?: boolean;
   onPress?: () => void;
   state?: any;
+  children: ReactNode
 }

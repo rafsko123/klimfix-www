@@ -1,7 +1,7 @@
 export const MainTheme = {
   colors:          {
     primary:      "#00C9FF",
-    primaryHue:   "#00A0CC",
+    primaryHue:   "#1db1dc",
     secondary:    "#003370",
     secondaryHue: "#002148",
 

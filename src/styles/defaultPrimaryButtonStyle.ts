@@ -7,13 +7,19 @@ export const defaultPrimaryButtonStyle = css`
     align-items: center;
     color: ${props => props.theme.colors.white};
     background-color: ${({theme}) => theme.colors.primary};
-    //font-size: ${props => props.theme.fonts.mobile.sm};
-    //font-weight: ${props => props.theme.weights.medium};
+    font-size: ${props => props.theme.fonts.xs};
+    text-transform: uppercase;
     outline: none;
     white-space: nowrap;
     cursor: pointer;
-    height: 40px;
-    padding: 2px 22px;
+    height: 50px;
+    padding: 2px 36px;
+    transition: .3s background-color ease;
+
+    &:hover {
+        background-color: ${({theme}) => theme.colors.primaryHue};
+
+    }
 
     &:disabled {
         cursor: not-allowed;
