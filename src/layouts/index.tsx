@@ -1,7 +1,8 @@
 import {FunctionComponent} from "react";
 import React               from "react";
 import {ThemeProvider}     from "styled-components";
-import Navbar              from "../components/navbar/Navbar";
+import Footer              from "../components/layout/Footer";
+import Navbar              from "../components/layout/Navbar";
 import {MainTheme}         from "../shared/Theme";
 import GlobalStyles        from "../styles/GlobalStyles";
 
@@ -18,8 +19,9 @@ const Layout: FunctionComponent<Props> = ({children, pageContext}) => {
     return (
       <ThemeProvider theme={MainTheme}>
         <GlobalStyles/>
-        <Navbar />
+        <Navbar/>
         {children}
+        <Footer/>
       </ThemeProvider>
     );
   }

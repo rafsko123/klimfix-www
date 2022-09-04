@@ -5,6 +5,7 @@ import About         from "../sections/homepage/About";
 import Contact       from "../sections/homepage/Contact";
 import HeroSlider    from "../sections/homepage/HeroSlider";
 import Services      from "../sections/homepage/Services";
+import Socials       from "../sections/homepage/Socials";
 
 
 const IndexPage = () => {
@@ -15,6 +16,7 @@ const IndexPage = () => {
       <Services/>
       <AboutIcons/>
       <Contact/>
+      <Socials />
     </>
   );
 };
