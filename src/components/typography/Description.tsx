@@ -6,4 +6,7 @@ export const Description = styled.p<{ isWhite?: boolean }>`
     font-size: ${({theme}) => theme.fonts.desktop.sm};
     line-height: 2;
     font-weight: 300;
+    strong,b {
+        font-weight: 500;
+    }
 `;
