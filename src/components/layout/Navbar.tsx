@@ -73,12 +73,9 @@ const NavbarCTA = styled(Link)`
     color: ${({theme}) => theme.colors.white};
 `;
 
-const NavbarMobileCTA = styled(Link)
-  ``
-;
-const Hamburger       = styled.div
-  ``
-;
+const NavbarMobileCTA = styled(Link)``;
+
+const Hamburger       = styled.div``;
 
 const Navbar = () => {
   return (

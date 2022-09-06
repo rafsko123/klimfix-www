@@ -1,11 +1,11 @@
 export const dataMenu = [
   {
     title: "O nas",
-    slug:  "o-nas",
+    slug:  "/o-nas",
   },
   {
     title: "usługi i cennik",
-    slug:  "uslugi-i-cennik",
+    slug:  "/uslugi-i-cennik",
   },
   {
     title: "nasze lokalizacje",
