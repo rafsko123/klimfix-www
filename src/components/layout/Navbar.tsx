@@ -1,11 +1,14 @@
-import {Link}     from "gatsby";
-import React      from "react";
-import styled     from "styled-components";
-import {dataMenu} from "../../data/DataMenu";
-import LogoIcon   from "../../assets/icons/logo.svg";
+import {Link}       from "gatsby";
+import {useState}   from "react";
+import {useEffect}  from "react";
+import React        from "react";
+import styled       from "styled-components";
+import {dataMenu}   from "../../data/DataMenu";
+import LogoIcon     from "../../assets/icons/logo.svg";
+import LogoDarkIcon from "../../assets/icons/logo_dark.svg";
 
 
-const Container = styled.div`
+const Container = styled.div<{ background?: boolean }>`
     position: fixed;
     top: 0;
     left: 50%;
@@ -13,6 +16,7 @@ const Container = styled.div`
     max-width: 2560px;
     width: 100%;
     z-index: 100;
+    background-color: ${p => p.background ? "#fff" : "transparent"};
 `;
 
 const Wrapper = styled.div`
@@ -49,8 +53,8 @@ const NavbarListItem = styled.li`
     }
 `;
 
-const NavbarLink = styled(Link)`
-    color: #fff;
+const NavbarLink = styled(Link)<{ dark: boolean }>`
+    color: ${(p) => p.dark ? p.theme.colors.secondary : "#ffffff"};
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 0.045em;
@@ -75,21 +79,36 @@ const NavbarCTA = styled(Link)`
 
 const NavbarMobileCTA = styled(Link)``;
 
-const Hamburger       = styled.div``;
+const Hamburger = styled.div``;
 
 const Navbar = () => {
+  const [whiteBackground, setWhiteBackground] = useState<boolean>(false);
+
+  useEffect(() => {
+    setWhiteBackground(
+      location.pathname.includes("/uslugi-i-cennik") ||
+      location.pathname.includes("/nasze-lokalizacje"),
+    );
+  }, [location.pathname]);
+
   return (
-    <Container>
+    <Container background={whiteBackground}>
       <Wrapper>
         <LogoBox to={"/"} title="Klimfix- Strona główna">
-          <img src={LogoIcon} alt=""/>
+          {
+            whiteBackground ? (
+              <img src={LogoDarkIcon} alt=""/>
+            ) : (
+              <img src={LogoIcon} alt=""/>
+            )
+          }
         </LogoBox>
         <NavbarMenuBox>
           <NavbarList>
             {
               dataMenu.map((element, i) => (
                 <NavbarListItem key={i}>
-                  <NavbarLink to={element.slug} title={element.title}>
+                  <NavbarLink to={element.slug} title={element.title} dark={whiteBackground}>
                     {element.title}
                   </NavbarLink>
                 </NavbarListItem>

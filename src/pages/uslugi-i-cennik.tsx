@@ -4,8 +4,8 @@ import SubpageContainer      from "../components/layout/SubpageContainer";
 import {Wrapper}             from "../components/layout/Wrapper";
 import {TitleMd}             from "../components/typography/TitleMd";
 import AboutIcons            from "../sections/AboutIcons";
+import ContactBaner          from "../sections/ContactBaner";
 import PriceList             from "../sections/priceList/priceList";
-import PriceListContactBaner from "../sections/priceList/PriceListContactBaner";
 
 
 const StyledWrapper = styled(Wrapper)`
@@ -21,7 +21,7 @@ const PriceListPage = () => {
         </TitleMd>
         <PriceList/>
         <AboutIcons/>
-        <PriceListContactBaner/>
+        <ContactBaner />
       </StyledWrapper>
     </SubpageContainer>
   );

@@ -9,7 +9,7 @@ export const dataMenu = [
   },
   {
     title: "nasze lokalizacje",
-    slug:  "nasze-lokalizacje",
+    slug:  "/nasze-lokalizacje",
   },
   {
     title: "Strefa wiedzy",

@@ -1,7 +1,7 @@
 import React         from "react";
 import styled        from "styled-components";
-import ButtonPrimary from "../../components/buttons/ButtonPrimary";
-import {TitleMd}     from "../../components/typography/TitleMd";
+import ButtonPrimary from "../components/buttons/ButtonPrimary";
+import {TitleMd}     from "../components/typography/TitleMd";
 
 
 const Container = styled.div`
@@ -14,7 +14,7 @@ const StyledTitleMd = styled(TitleMd)`
     margin-bottom: 36px;
 `;
 
-const PriceListContactBaner = () => {
+const ContactBaner = () => {
   return (
     <Container>
       <StyledTitleMd>
@@ -26,4 +26,4 @@ const PriceListContactBaner = () => {
   );
 };
 
-export default PriceListContactBaner;
+export default ContactBaner;
