@@ -12,27 +12,60 @@ import Img              from "gatsby-image";
 
 const TextBox = styled.div`
     max-width: 560px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 const StyledTitleLg = styled(TitleLg)`
     max-width: 400px;
     margin-bottom: 48px;
     flex-shrink: 0;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        margin-bottom: 36px;
+        text-align: center;
+    }
 `;
 
 const StyledTitleSm = styled(TitleSm)`
-    margin-bottom: 24px;
+    margin-bottom: 18px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin-bottom: 12px;
+    }
 `;
 
 const StyledWrapper = styled(Wrapper)`
     display: flex;
     align-items: center;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        flex-wrap: wrap-reverse;
+    }
 `;
 
 const ImageBox = styled.div`
     height: 600px;
     width: calc(100% - 400px);
     padding-left: 64px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        height: 460px;
+        padding-left: 48px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        height: 300px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        width: 100%;
+        margin-bottom: 36px;
+        padding-left: 0;
+        .gatsby-image-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+    }
 `;
 
 const Contact = () => {
@@ -42,7 +75,7 @@ const Contact = () => {
         <TextBox>
           <StyledTitleSm>Chcemy być blisko Ciebie!</StyledTitleSm>
           <StyledTitleLg>SPRAWDŹ, GDZIE JESTEŚMY</StyledTitleLg>
-          <ButtonPrimary to={"/"}>Nasze lokalizacje</ButtonPrimary>
+          <ButtonPrimary to={"/nasze-lokalizacje"}>Nasze lokalizacje</ButtonPrimary>
         </TextBox>
         <ImageBox>
           <Img fluid={image().service_image_1.childImageSharp.fluid}/>

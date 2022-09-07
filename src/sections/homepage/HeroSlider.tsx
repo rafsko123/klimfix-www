@@ -7,6 +7,7 @@ import {Swiper, SwiperSlide}    from "swiper/react";
 import {Wrapper}                from "../../components/layout/Wrapper";
 import {TitleSm}                from "../../components/typography/TitleSm";
 import {TitleXl}                from "../../components/typography/TitleXl";
+import {useHeroSliderData}      from "../../hooks/heroSliderData/useHeroSliderData";
 
 //slide arrows
 import ChevronLeft  from "../../assets/icons/chevron_left.svg";
@@ -18,9 +19,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css/autoplay";
-
-
-import {useHeroSliderData} from "../../hooks/heroSliderData/useHeroSliderData";
 
 
 const Container = styled.div`
@@ -43,8 +41,16 @@ const Container = styled.div`
                 width: 100%;
                 height: 100%;
 
+                .gatsby-image-wrapper {
+                    width: 100%;
+                    height: 100%;
+                }
+
                 img {
                     width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: right;
                 }
             }
 
@@ -74,6 +80,22 @@ const Container = styled.div`
 
                     &:nth-child(3) {
                         background: linear-gradient(90.07deg, #003370 3.38%, rgba(0, 51, 112, 0) 106.14%);
+                    }
+
+                    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+                        &:nth-child(1) {
+                            background: linear-gradient(180deg, rgba(0, 51, 112, 0) 0%, rgba(60, 191, 240, 0.61) 100%);
+                            z-index: 2;
+                        }
+
+                        &:nth-child(2) {
+                            background: linear-gradient(90.07deg, #003370 0.06%, rgba(0, 51, 112, 0) 81.75%);
+                        }
+
+                        &:nth-child(3) {
+                            z-index: 3;
+                            background: linear-gradient(90.07deg, #003370 3.38%, rgba(0, 51, 112, 0) 106.14%);
+                        }
                     }
                 }
             }
@@ -116,7 +138,8 @@ const Container = styled.div`
 
     .swiper-pagination {
         bottom: 53px !important;
-z-index: 8;
+        z-index: 8;
+
         .swiper-pagination-bullet {
             width: 14px;
             height: 2px;
@@ -131,10 +154,16 @@ z-index: 8;
             }
         }
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        min-height: 435px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        min-height: 320px;
+    }
 `;
 
 const StyledWrapper = styled(Wrapper)`
-    max-width: 1600px;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -144,15 +173,31 @@ const StyledWrapper = styled(Wrapper)`
     z-index: 4;
     display: flex;
     align-items: center;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        align-items: flex-start;
+        padding-top: 200px;
+    }
 `;
 
 const SlideTextBox = styled.div`
-    max-width: 760px;
+    max-width: 860px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopBig}) {
+        max-width: 760px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        max-width: 700px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        max-width: 500px;
+    }
 `;
 
 const StyledTitleSm = styled(TitleSm)`
-    margin-bottom: 24px;
+    margin-bottom: 18px;
     display: inline-block;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin-bottom: 12px;
+    }
 `;
 
 const HeroSlider = () => {

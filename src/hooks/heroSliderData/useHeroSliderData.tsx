@@ -1,5 +1,5 @@
-import React from "react";
-import Img from "gatsby-image"
+import React                from "react";
+import Img                  from "gatsby-image";
 import {useHeroSliderImage} from "./useHeroSliderImage";
 
 
@@ -14,7 +14,7 @@ const useHeroSliderData = () => {
       slug:     "",
     },
     {
-      title:    "Napełnianie czynnikiem R144A i R1234YF",
+      title:    <>Napełnianie czynnikiem R144A&nbsp;i&nbsp;R1234YF</>,
       subtitle: "Najwyższy czas pomyśleć o lecie!",
       image:    <Img fluid={image.slide_2.childImageSharp.fluid}/>,
       slug:     "",

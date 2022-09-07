@@ -18,6 +18,9 @@ const StyledSection = styled(Section)`
     background-color: ${({theme}) => theme.colors.secondary};
     padding: 0;
     position: relative;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletSmall}) {
+        flex-wrap: wrap-reverse;
+    }
 `;
 
 const Column = styled.div`
@@ -38,10 +41,20 @@ const Column = styled.div`
             width: 100%;
             height: 50%;
             z-index: 2;
-            background: linear-gradient(180deg, rgba(0, 51, 112, 0) 0%, rgba(60, 191, 240, 0.81) 100%);
+            background-image: linear-gradient(180deg, rgba(0, 51, 112, 0) 0%, rgba(60, 191, 240, 0.81) 100%);
             background-repeat: no-repeat;
             transform: rotate(180deg);
         }
+
+        @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+            &:after {
+                height: 70%;
+            }
+        }
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletSmall}) {
+        width: 100%;
     }
 `;
 
@@ -51,10 +64,28 @@ const StyledWrapper = styled(Wrapper)`
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletSmall}) {
+        position: relative;
+        transform: none;
+        top: 0;
+        left: 0;
+    }
+
 `;
 
 const TextBox = styled.div`
     max-width: 560px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        max-width: 480px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+        max-width: 400px;
+        width: 100%;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        max-width: 300px;
+        padding-top: 24px;
+    }
 `;
 
 const ImageBox = styled.div`
@@ -69,13 +100,25 @@ const ImageBox = styled.div`
         width: 100%;
         height: 50%;
         z-index: 2;
-        background: linear-gradient(180deg, rgba(0, 51, 112, 0) 0%, #003370 92.46%);
+        background-image: linear-gradient(180deg, rgba(0, 51, 112, 0) 0%, #003370 92.46%);
         background-repeat: no-repeat;
     }
 `;
 
 const StyledTitleLg = styled(TitleLg)`
     color: #fff;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 40px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+        font-size: 34px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        font-size: 28px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        font-size: 20px;
+    }
 `;
 
 const StyledDescription = styled(Description)`
@@ -85,6 +128,12 @@ const StyledDescription = styled(Description)`
 
 const SocialsButtons = styled.div`
     color: #fff;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
 `;
 
 const SocialButton = styled.a`
@@ -120,6 +169,41 @@ const SocialButton = styled.a`
 
         &:hover {
             background-color: #CF197B;
+        }
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        padding: 12px 24px;
+        &:not(:last-child) {
+            margin-right: 18px;
+        }
+
+        img {
+            width: 14px;
+            height: 14px;
+            margin-right: 10px;
+        }
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+        padding: 12px 18px;
+        font-size: 12px;
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+
+        img {
+            width: 12px;
+            height: 12px;
+            margin-right: 10px;
+        }
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        width: 200px;
+        justify-content: center;
+        &:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 10px;
         }
     }
 `;

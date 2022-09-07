@@ -22,10 +22,18 @@ const IconBox = styled.div`
         object-fit: contain;
         object-position: center;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        width: 50px;
+        height: 50px;
+    }
 `;
 
 const StyledTitleSm = styled(TitleSm)`
     text-align: center;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        font-size: 12px;
+    }
 `;
 
 interface Props {

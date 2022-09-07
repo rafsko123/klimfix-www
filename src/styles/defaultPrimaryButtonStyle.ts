@@ -25,5 +25,11 @@ export const defaultPrimaryButtonStyle = css`
         cursor: not-allowed;
         opacity: 0.5;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        font-size: 12px;
+        height: 40px;
+        padding: 2px 24px;
+    }
 `;
 

@@ -43,10 +43,11 @@ export const MainTheme = {
   },
   layoutPartSizes: {
     wrapper: {
-      xl: "1408px",
-      lg: "",
-      md: "",
-      sm: "",
+      full: "100%",
+      xl:   "1448px",
+      lg:   "1248px",
+      md:   "1148px",
+      sm:   "1024px",
     },
   },
 };

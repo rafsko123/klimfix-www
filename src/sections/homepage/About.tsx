@@ -10,6 +10,10 @@ import {TitleSm}     from "../../components/typography/TitleSm";
 const StyledWrapper = styled(Wrapper)`
     display: flex;
     align-items: center;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
 `;
 
 const Column = styled.div`
@@ -22,14 +26,41 @@ const Column = styled.div`
     &:nth-child(2) {
         padding-right: 60px;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        &:nth-child(1) {
+            padding-right: 40px;
+        }
+
+        &:nth-child(2) {
+            padding-right: 40px;
+        }
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        width: 100%;
+        &:nth-child(1) {
+            padding-right: 0;
+            margin-bottom: 36px;
+        }
+
+        &:nth-child(2) {
+            padding-right: 0
+        }
+    }
 `;
 
 const TextBox = styled.div`
     max-width: 560px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        max-width: 480px;
+    }
 `;
 
 const StyledTitleSm = styled(TitleSm)`
-    margin-bottom: 24px;
+    margin-bottom: 18px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin-bottom: 12px;
+    }
 `;
 
 const About = () => {

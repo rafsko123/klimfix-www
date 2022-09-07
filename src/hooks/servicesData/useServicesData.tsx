@@ -11,19 +11,19 @@ const useServicesData = () => {
 
   return [
     {
-      title:       "SERWIS KLIMATYZACJI",
+      title:       <>SERWIS<br/>KLIMATYZACJI</>,
       description: "Napełniamy układ zarówno starym czynnikiem (R134a) jak i nowym (R1234yf). W pakiecie oferujemy sprawdzenie szczelności oraz ozonowanie!",
       icon:        SnowflakeIcon,
       image:       <Img fluid={image.service_image_1.childImageSharp.fluid}/>,
-      slug:        "/",
+      slug:        "/cennik",
       buttonText:  "Sprawdź cennik",
     },
     {
-      title:       "SPRZĄTANIE WNĘTRZA AUTA",
+      title:       <>SPRZĄTANIE<br/>WNĘTRZA AUTA</>,
       description: "Odświeżymy wnętrze Twojego auta. W usługach oferujemy m.in. odkurzanie, pranie tapicerki i czyszczenie skór. Czyste wnętrze to komfort jazdy!",
       icon:        VacuumImage,
       image:       <Img fluid={image.service_image_2.childImageSharp.fluid}/>,
-      slug:        "/",
+      slug:        "/cennik",
       buttonText:  "Sprawdź cennik",
     },
   ];

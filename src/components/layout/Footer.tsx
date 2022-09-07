@@ -1,8 +1,8 @@
 import {Link}    from "gatsby";
 import React     from "react";
 import styled    from "styled-components";
-import {Wrapper} from "../layout/Wrapper";
 import {TitleSm} from "../typography/TitleSm";
+import {Wrapper} from "./Wrapper";
 
 import PhoneIcon    from "../../assets/icons/phone.svg";
 import EnvelopeIcon from "../../assets/icons/envelope.svg";
@@ -15,6 +15,9 @@ import LogoIcon     from "../../assets/icons/logo_footer.svg";
 const Container = styled.div`
     background-color: ${({theme}) => theme.colors.secondary};
     padding: 64px 0 96px 0;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        padding: 56px 0 72px 0;
+    }
 `;
 
 const StyledWrapper = styled(Wrapper)``;
@@ -22,16 +25,34 @@ const StyledWrapper = styled(Wrapper)``;
 const ColumnWrapper = styled.div`
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 `;
 
 const Column = styled.div`
     display: flex;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        width: 100%;
+        justify-content: space-between;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        flex-direction: column;
+    }
 `;
 
 const StyledTitleSm = styled(TitleSm)`
     color: #fff;
     font-size: 36px;
     margin-bottom: 56px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 28px;
+        margin-bottom: 48px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        font-size: 20px;
+    }
 `;
 
 const ListItem = styled.div`
@@ -40,11 +61,34 @@ const ListItem = styled.div`
     &:not(:last-child) {
         margin-right: 48px;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        &:not(:last-child) {
+            margin-right: 36px;
+        }
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        &:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 36px;
+        }
+    }
 `;
 
 const LogoBox = styled.div`
     img {
         width: 300px;
+        @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+            width: 200px;
+        }
+        @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+            width: 140px;
+        }
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        padding: 48px 0;
+        width: 100%;
     }
 `;
 
@@ -54,7 +98,12 @@ const TitleList = styled.h4`
     font-weight: 600;
     margin-bottom: 24px;
     font-family: 'Poppins', sans-serif;
-
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 16px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        font-size: 14px;
+    }
 `;
 
 const ListContent = styled.div`
@@ -65,11 +114,26 @@ const ListIcon = styled.div`
     img {
         height: 22px;
         width: 22px;
+        margin-top: 2px;
+        @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+            width: 18px;
+            height: 18px;
+        }
+        @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+            width: 12px;
+            height: 12px;
+        }
     }
 `;
 
 const ListLine = styled.div`
     padding-left: 24px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        padding-left: 18px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        padding-left: 12px;
+    }
 `;
 
 const ListLink = styled.a`
@@ -81,6 +145,14 @@ const ListLink = styled.a`
 
     &:hover {
         text-decoration: underline !important;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        font-size: 12px;
     }
 `;
 
@@ -94,10 +166,19 @@ const ListSpan = styled.span`
     b {
         font-weight: 500;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        font-size: 12px;
+    }
 `;
 
 const FooterBottom = styled.div`
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding-top: 36px;
     margin-top: 72px;
@@ -105,6 +186,14 @@ const FooterBottom = styled.div`
 
     & > * {
         font-family: 'Poppins', sans-serif;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        padding-top: 36px;
+        margin-top: 64px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        flex-direction: column;
     }
 `;
 
@@ -114,6 +203,23 @@ const CopyRights = styled.div`
     font-weight: 500;
     font-size: ${({theme}) => theme.fonts.desktop.xs};
     display: inline;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin-right: 36px;
+        font-size: 12px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        margin: 4px 0 4px 0;
+    }
+`;
+
+const FooterBox = styled.div`
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 4px 0;
+
+    }
 `;
 
 const StyledLink = styled(Link)`
@@ -121,6 +227,9 @@ const StyledLink = styled(Link)`
     font-weight: 300;
     font-size: ${({theme}) => theme.fonts.desktop.xs};
     display: inline-block;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 12px;
+    }
 
     &:hover {
         text-decoration: underline !important;
@@ -131,6 +240,9 @@ const Realization = styled.div`
     color: rgba(255, 255, 255, 0.3);
     font-weight: 300;
     font-size: ${({theme}) => theme.fonts.desktop.xs};
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 12px;
+    }
 `;
 
 const Footer = () => {
@@ -208,10 +320,10 @@ const Footer = () => {
           </Column>
         </ColumnWrapper>
         <FooterBottom>
-          <div>
+          <FooterBox>
             <CopyRights>Klimfix {new Date().getFullYear()}</CopyRights>
             <StyledLink to={"/"}>Polityka Prywatności</StyledLink>
-          </div>
+          </FooterBox>
           <div>
             <Realization>
               Project by Daria Pyziak Design

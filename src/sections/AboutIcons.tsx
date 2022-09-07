@@ -10,11 +10,24 @@ const StyledWrapper = styled(Wrapper)`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        flex-direction: column;
+    }
 `;
 
 const AboutIconWrapper = styled.div`
     margin: 0 24px;
     width: 240px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        width: 180px;
+        margin: 0 12px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        flex-direction: column;
+        &:not(:last-child) {
+            margin-bottom: 36px;
+        }
+    }
 `;
 
 const AboutIcons = () => {

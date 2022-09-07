@@ -13,6 +13,14 @@ const Container = styled.div`
     min-height: 600px;
     border-radius: 5px;
     position: relative;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        min-height: 500px;
+        padding-bottom: 60px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        min-height: 400px;
+        padding-bottom: 40px;
+    }
 `;
 
 const Wrapper = styled.div`
@@ -48,22 +56,43 @@ const IconBox = styled.div`
         width: 100%;
         height: 100%;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        width: 80px;
+        height: 80px;
+        transform: translateY(-40px);
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        width: 72px;
+        height: 72px;
+        transform: translateY(-36px);
+    }
 `;
 
-const StyledTitleMd     = styled(TitleMd)`
+const StyledTitleMd = styled(TitleMd)`
     color: ${({theme}) => theme.colors.primary};
-    margin: 60px 0 60px 0;
+    margin: 60px 0;
     text-align: center;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin: 30px 0;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        margin: 24px 0;
+    }
 `;
+
 const StyledDescription = styled(Description)`
     color: #ffffff;
     text-align: center;
     padding: 0 36px 64px 36px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        padding: 0 24px 48px 24px;
+    }
 `;
 
 interface Props {
   element: {
-    title: string;
+    title: any;
     description: string;
     icon: string;
     image: ReactNode;
