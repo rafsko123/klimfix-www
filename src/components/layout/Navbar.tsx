@@ -1,11 +1,12 @@
-import {Link}       from "gatsby";
-import {useState}   from "react";
-import {useEffect}  from "react";
-import React        from "react";
-import styled       from "styled-components";
-import {dataMenu}   from "../../data/DataMenu";
-import LogoIcon     from "../../assets/icons/logo.svg";
-import LogoDarkIcon from "../../assets/icons/logo_dark.svg";
+import {Link}              from "gatsby";
+import {FunctionComponent} from "react";
+import {useState}          from "react";
+import {useEffect}         from "react";
+import React               from "react";
+import styled              from "styled-components";
+import {dataMenu}          from "../../data/DataMenu";
+import LogoIcon            from "../../assets/icons/logo.svg";
+import LogoDarkIcon        from "../../assets/icons/logo_dark.svg";
 
 
 const Container = styled.div<{ background?: boolean }>`
@@ -53,7 +54,7 @@ const NavbarListItem = styled.li`
     }
 `;
 
-const NavbarLink = styled(Link)<{ dark: boolean }>`
+const NavbarLink = styled(Link)<{ dark: boolean | undefined }>`
     color: ${(p) => p.dark ? p.theme.colors.secondary : "#ffffff"};
     display: inline-block;
     text-transform: uppercase;
@@ -81,14 +82,15 @@ const NavbarMobileCTA = styled(Link)``;
 
 const Hamburger = styled.div``;
 
-const Navbar = () => {
+const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
   const [whiteBackground, setWhiteBackground] = useState<boolean>(false);
 
   useEffect(() => {
-    setWhiteBackground(
-      location.pathname.includes("/uslugi-i-cennik") ||
-      location.pathname.includes("/nasze-lokalizacje"),
-    );
+    if (path === "/uslugi-i-cennik/" || path === "/nasze-lokalizacje/" || path === "/strefa-wiedzy/") {
+      setWhiteBackground(true);
+    } else {
+      setWhiteBackground(false);
+    }
   }, [location.pathname]);
 
   return (
@@ -108,7 +110,7 @@ const Navbar = () => {
             {
               dataMenu.map((element, i) => (
                 <NavbarListItem key={i}>
-                  <NavbarLink to={element.slug} title={element.title} dark={whiteBackground}>
+                  <NavbarLink to={element.slug} title={element.title} dark={whiteBackground ? whiteBackground : undefined}>
                     {element.title}
                   </NavbarLink>
                 </NavbarListItem>

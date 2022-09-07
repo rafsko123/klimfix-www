@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@types/react-share": "^4.0.0",
     "@types/styled-components": "^5.1.26",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^4.22.0",
@@ -33,6 +34,7 @@
     "gatsby-transformer-sharp": "^4.22.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-share": "^4.4.0",
     "styled-components": "^5.3.5",
     "swiper": "^8.3.2"
   },

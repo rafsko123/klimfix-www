@@ -13,10 +13,10 @@ export const dataMenu = [
   },
   {
     title: "Strefa wiedzy",
-    slug:  "strefa-wiedzy",
+    slug:  "/strefa-wiedzy",
   },
   {
     title: "kontakt",
-    slug:  "kontakt",
+    slug:  "/kontakt",
   },
 ];

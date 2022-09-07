@@ -72,6 +72,7 @@ const HoursLine = styled(Line)`
 const Iframe = styled.iframe`
     width: 50%;
     height: 100%;
+    background-color: #E4E7EA;
 `;
 
 const ImageBox = styled.div`

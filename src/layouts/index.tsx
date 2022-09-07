@@ -10,16 +10,18 @@ import GlobalStyles        from "../styles/GlobalStyles";
 interface Props {
   children: any;
   pageContext: any;
+  path: string;
 }
 
-const Layout: FunctionComponent<Props> = ({children, pageContext}) => {
+const Layout: FunctionComponent<Props> = ({path, children, pageContext}) => {
+
   if (pageContext.layout === "404") {
     return <ThemeProvider theme={MainTheme}>{children}</ThemeProvider>;
   } else {
     return (
       <ThemeProvider theme={MainTheme}>
         <GlobalStyles/>
-        <Navbar/>
+        <Navbar path={path}/>
         {children}
         <Footer/>
       </ThemeProvider>
