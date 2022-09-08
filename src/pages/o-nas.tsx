@@ -1,13 +1,12 @@
-import React     from "react";
-import styled    from "styled-components";
-import {Wrapper} from "../components/layout/Wrapper";
+import React        from "react";
+import styled       from "styled-components";
+import {Wrapper}    from "../components/layout/Wrapper";
+import ContactBaner from "../sections/about/ContactBaner";
+import Content      from "../sections/about/Content";
+import Hero         from "../sections/about/Hero";
 
 import Watermark       from "../assets/icons/watermark_about.svg";
 import WatermarkBottom from "../assets/icons/watermark_about_bottom.svg";
-
-import ContactBaner from "../sections/about/ContactBaner";
-import Content      from "../sections/about/Content";
-import Hero         from "../sections/about/hero";
 
 
 const Container = styled.div`

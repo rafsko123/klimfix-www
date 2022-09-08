@@ -1,27 +1,38 @@
-import React                 from "react";
-import styled                from "styled-components";
-import SubpageContainer      from "../components/layout/SubpageContainer";
-import {Wrapper}             from "../components/layout/Wrapper";
-import {TitleMd}             from "../components/typography/TitleMd";
-import AboutIcons            from "../sections/AboutIcons";
-import ContactBaner          from "../sections/ContactBaner";
-import PriceList             from "../sections/priceList/priceList";
+import React            from "react";
+import styled           from "styled-components";
+import SubpageContainer from "../components/layout/SubpageContainer";
+import {Wrapper}        from "../components/layout/Wrapper";
+import {TitleMd}        from "../components/typography/TitleMd";
+import AboutIcons       from "../sections/AboutIcons";
+import ContactBaner     from "../sections/ContactBaner";
+import PriceList        from "../sections/priceList/priceList";
 
 
 const StyledWrapper = styled(Wrapper)`
     max-width: 1200px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        max-width: 1024px;
+    }
+`;
+
+const StyledTitleMd = styled(TitleMd)`
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        text-align: center;
+        width: 100%;
+    }
+
 `;
 
 const PriceListPage = () => {
   return (
     <SubpageContainer>
       <StyledWrapper>
-        <TitleMd as="h1">
+        <StyledTitleMd as="h1">
           Usługi i cennik
-        </TitleMd>
+        </StyledTitleMd>
         <PriceList/>
         <AboutIcons/>
-        <ContactBaner />
+        <ContactBaner/>
       </StyledWrapper>
     </SubpageContainer>
   );

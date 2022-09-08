@@ -37,7 +37,7 @@ export const DataPriceList = [
         price:       "20 zł",
       },
       {
-        title:       "Ozonowanie/odgrzybianie",
+        title:       "Ozonowanie / odgrzybianie",
         description: "",
         bolded:      false,
         price:       "50 zł",

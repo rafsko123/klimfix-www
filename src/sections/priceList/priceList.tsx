@@ -6,11 +6,20 @@ import {DataPriceList} from "../../data/DataPriceList";
 
 const Container = styled.div`
     margin: 56px 0 72px 0;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin: 48px 0 64px 0;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        margin: 36px 0;
+    }
 `;
 
 const PriceListItem = styled.div`
     &:not(:last-child) {
         margin-bottom: 64px;
+        @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+            margin-bottom: 48px;
+        }
     }
 `;
 
@@ -20,6 +29,7 @@ const PriceListHeader = styled.div`
     border-radius: 5px;
     display: flex;
     align-items: center;
+    overflow: hidden;
 
     &:before {
         content: '';
@@ -32,6 +42,17 @@ const PriceListHeader = styled.div`
         background: linear-gradient(90deg, #002F68 35.42%, rgba(21, 45, 109, 0) 100%);
         z-index: 2;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        height: 70px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        height: 60px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        height: auto;
+        padding: 12px;
+    }
 `;
 
 const ImageBox = styled.div`
@@ -41,9 +62,15 @@ const ImageBox = styled.div`
     width: 100%;
     height: 100%;
 
+    .gatsby-image-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+
     img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
     }
 `;
 
@@ -56,6 +83,18 @@ const IconBox = styled.div`
         height: 100%;
         object-fit: contain;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        width: 36px;
+        height: 36px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        width: 30px;
+        height: 30px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        display: none;
+    }
 `;
 
 const HeaderTextWrapper = styled.div`
@@ -66,12 +105,29 @@ const HeaderTextWrapper = styled.div`
     padding: 0 48px;
     display: flex;
     align-items: center;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        padding: 0 36px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        padding: 0 24px;
+    }
 `;
 
 const StyledTitleSm = styled(TitleSm)`
     color: ${({theme}) => theme.colors.primary};
     margin-left: 24px;
     font-size: 32px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 24px;
+        margin-left: 18px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        width: 100%;
+        text-align: center;
+        line-height: 1.2;
+        margin-left: 0;
+        font-size: 22px;
+    }
 `;
 
 const PriceListContent = styled.div`
@@ -80,6 +136,9 @@ const PriceListContent = styled.div`
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        padding: 24px 0;
+    }
 `;
 
 const PriceListContentItem = styled.div`
@@ -89,6 +148,8 @@ const PriceListContentItem = styled.div`
     margin-bottom: 24px;
     padding-bottom: 24px;
     border-bottom: 1px solid #C6C6C5;
+    position: relative;
+
 `;
 
 const ServiceBox = styled.div`
@@ -98,22 +159,43 @@ const ServiceBox = styled.div`
     & > * {
         font-family: 'Poppins', sans-serif;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        margin-right: 24px;
+    }
 `;
 
 const ServiceTitle = styled.div<{ bolded: boolean }>`
     color: ${(p) => p.bolded ? p.theme.colors.primary : "#003370"};
     font-weight: 600;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        padding-right: 48px;
+        line-height: 1.2;
+    }
 `;
 
 const ServiceDescription = styled.div`
     font-size: 12px;
     margin-top: 4px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        margin-top: 8px;
+    }
 `;
 
 const ServicePrice = styled.div`
     font-size: 20px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 18px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 16px;
+    }
 `;
 
 const PriceListDescription = styled.div`
@@ -153,7 +235,9 @@ const PriceList = () => {
                   <PriceListContentItem key={`service_${i}`}>
                     <ServiceBox>
                       <ServiceTitle bolded={item.bolded}>{item.title}</ServiceTitle>
-                      <ServiceDescription>{item.description}</ServiceDescription>
+                      {
+                        item.description && <ServiceDescription>{item.description}</ServiceDescription>
+                      }
                     </ServiceBox>
                     <ServicePrice>{item.price}</ServicePrice>
                   </PriceListContentItem>
