@@ -9,10 +9,14 @@ const Container = styled.div`
     max-width: 400px;
     text-align: center;
     margin: 120px auto 0 auto;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        max-width: 280px;
+    }
 `;
 
 const StyledDescription = styled(Description)`
     margin: 24px 0;
+
 `;
 
 const ContactBaner = () => {
