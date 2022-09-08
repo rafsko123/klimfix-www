@@ -16,17 +16,51 @@ const LocalisationItem = styled.div`
     &:not(:last-child) {
         margin-bottom: 34px;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin: 44px 0 42px 0;
+        height: 240px;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+        height: 200px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        height: auto;
+        flex-wrap: wrap;
+        margin: 36px 0;
+    }
 `;
 
-const MediaBox   = styled.div`
+const MediaBox = styled.div`
     width: calc(100% - 330px);
     display: flex;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        width: calc(100% - 300px);
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        width: 100%;
+        margin-top: 24px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        justify-content: flex-start;
+        flex-direction: column;
+    }
 `;
+
 const AddressBox = styled.div`
     display: flex;
     width: 330px;
     flex-shrink: 0;
     padding-top: 40px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        width: 300px;
+        padding-top: 24px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        padding-top: 0;
+        width: 100%;
+    }
 `;
 
 const IconBox = styled.div`
@@ -36,6 +70,22 @@ const IconBox = styled.div`
     img {
         width: 30px;
         height: 46px;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin-right: 18px;
+        width: 40px;
+        img {
+            width: 24px;
+            height: 36px;
+        }
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        width: auto;
+        img {
+            width: 30px;
+            height: 40px;
+        }
     }
 `;
 
@@ -53,11 +103,23 @@ const Line = styled.div`
 const BoldedLine = styled(Line)`
     font-size: 20px;
     font-weight: 600;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 16px;
+        line-height: 1.4;
+    }
 `;
 
 const LineDescription = styled(Line)`
     margin: 8px 0 18px 0;
     font-size: 16px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 14px;
+        margin: 6px 0 12px 0;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        font-size: 12px;
+        margin: 4px 0 12px 0;
+    }
 `;
 
 const HoursLine = styled(Line)`
@@ -67,12 +129,20 @@ const HoursLine = styled(Line)`
     width: 100%;
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        margin: 0;
+    }
 `;
 
 const Iframe = styled.iframe`
     width: 50%;
     height: 100%;
     background-color: #E4E7EA;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        width: 100%;
+        height: 240px;
+    }
+
 `;
 
 const ImageBox = styled.div`
@@ -81,10 +151,13 @@ const ImageBox = styled.div`
     .gatsby-image-wrapper {
         height: 100%;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        width: 100%;
+    }
 `;
 
 const Localisations = () => {
-
   const data = useLocalisationData();
 
   return (
