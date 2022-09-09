@@ -13,15 +13,34 @@ const Container = styled.div`
 `;
 
 const StyledWrapper = styled(Wrapper)`
+    max-width: 1000px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        max-width: 800px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        max-width: 700px;
+    }
 `;
 
 const ImageBox = styled.div`
     width: 100%;
     height: 700px;
+
+    .gatsby-image-wrapper {
+        height: 100%;
+        width: 100%;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        height: 500px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        height: 300px;
+    }
 `;
 
 interface Props {

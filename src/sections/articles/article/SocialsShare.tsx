@@ -13,6 +13,13 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 80px 0 100px 0;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin: 60px 0 80px 0;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        flex-direction: column;
+        text-align: center;
+    }
 `;
 
 const ButtonsWrapper = styled.div`
@@ -24,6 +31,17 @@ const ButtonsWrapper = styled.div`
             margin-right: 36px;
         }
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        button {
+            &:not(:last-child) {
+                margin-right: 18px;
+            }
+        }
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        margin-top: 36px;
+    }
 `;
 
 const StyledTitleLg = styled(TitleLg)`
@@ -34,6 +52,10 @@ const SocialIcon = styled.img`
     width: 64px;
     height: 64px;
     cursor: pointer;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        width: 48px;
+        height: 48px;
+    }
 `;
 
 const SocialsShare = () => {

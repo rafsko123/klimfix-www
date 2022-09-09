@@ -36,7 +36,7 @@ const AboutIcons = () => {
       <StyledWrapper>
         {
           DataAboutIcons.map((element, i) => (
-            <AboutIconWrapper>
+            <AboutIconWrapper key={i}>
               <AboutIconCard element={element}/>
             </AboutIconWrapper>
           ))

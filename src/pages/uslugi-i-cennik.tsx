@@ -20,7 +20,6 @@ const StyledTitleMd = styled(TitleMd)`
         text-align: center;
         width: 100%;
     }
-
 `;
 
 const PriceListPage = () => {

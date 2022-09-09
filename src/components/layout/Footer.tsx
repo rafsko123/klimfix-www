@@ -200,7 +200,7 @@ const FooterBottom = styled.div`
 const CopyRights = styled.div`
     color: rgba(255, 255, 255, 0.3);
     margin-right: 48px;
-    font-weight: 500;
+    font-weight: 300;
     font-size: ${({theme}) => theme.fonts.desktop.xs};
     display: inline;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
@@ -218,7 +218,6 @@ const FooterBox = styled.div`
         flex-direction: column;
         text-align: center;
         margin: 4px 0;
-
     }
 `;
 

@@ -12,6 +12,9 @@ import {ARTICLE_1}       from "../../types/Articles";
 
 const ArticleWrapper = styled(Wrapper)`
     max-width: 960px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        max-width: 720px;
+    }
 `;
 
 const Article_1 = () => {

@@ -5,13 +5,14 @@ import {useEffect}         from "react";
 import React               from "react";
 import styled              from "styled-components";
 import {dataMenu}          from "../../data/DataMenu";
+import classNames          from "classnames";
 
 import LogoIcon     from "../../assets/icons/logo.svg";
 import LogoDarkIcon from "../../assets/icons/logo_dark.svg";
 import PhoneIcon    from "../../assets/icons/phone.svg";
 
 
-const Container = styled.div<{ background?: boolean }>`
+const Container = styled.div`
     position: fixed;
     top: 0;
     left: 50%;
@@ -19,7 +20,16 @@ const Container = styled.div<{ background?: boolean }>`
     max-width: 2560px;
     width: 100%;
     z-index: 100;
-    background-color: ${p => p.background ? "#fff" : "transparent"};
+
+    &.menu-scrolled,
+    &.white-background {
+        background-color: #fff;
+        transition: .3s background-color ease;
+    }
+
+    &.menu-scrolled {
+        box-shadow: 0 8px 18px -14px rgba(0, 201, 255, 1);
+    }
 `;
 
 const Wrapper = styled.div`
@@ -33,12 +43,19 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: .3s height ease;
+
+    &.menu-scrolled {
+        height: 65px;
+    }
+
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         padding-left: 24px;
-        height: 60px;
+        height: 60px !important;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
         padding-right: 36px;
+        height: 50px !important;
     }
 `;
 
@@ -120,16 +137,24 @@ const NavbarListItem = styled.li`
     }
 `;
 
-const NavbarLink = styled(Link)<{ dark: boolean | undefined }>`
-    color: ${(p) => p.dark ? p.theme.colors.secondary : "#ffffff"};
+const NavbarLink = styled(Link)`
+    color: #fff;
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 0.045em;
+
+    &.menu-scrolled,
+    &.white-background {
+        color: ${({theme}) => theme.colors.secondary};
+        transition: .3s color ease;
+    }
+
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         font-size: 14px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
         font-size: 16px;
+        color: #fff !important;
     }
 `;
 
@@ -197,11 +222,19 @@ const Hamburger = styled.div`
         }
     }
 
+    &.white-background,
+    &.menu-scrolled {
+        span {
+            transition: .3s background-color ease;
+            background-color: ${({theme}) => theme.colors.secondary};
+        }
+    }
+
     &.menu-active {
         transform: rotate(-45deg);
 
         span {
-            background-color: ${({theme}) => theme.colors.primary};
+            background-color: ${({theme}) => theme.colors.primary} !important;
 
             &:nth-child(1) {
                 transform: rotate(90deg);
@@ -217,7 +250,23 @@ const Hamburger = styled.div`
 
 const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
   const [whiteBackground, setWhiteBackground] = useState<boolean>(false);
+  const [menuScrolled, setMenuScrolled]       = useState<boolean>(false);
   const [menuActive, setMenuActive]           = useState<boolean>(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 60) {
+      setMenuScrolled(true);
+    } else {
+      setMenuScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (path === "/uslugi-i-cennik/" || path === "/nasze-lokalizacje/" || path === "/strefa-wiedzy/") {
@@ -227,12 +276,28 @@ const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
     }
   }, [location.pathname]);
 
+  const handleClick = () => {
+    document.body.classList.toggle("scroll-lock");
+    setMenuActive(!menuActive);
+  };
+
+  const handleLinkClick = () => {
+    setMenuActive(false);
+    document.body.classList.remove("scroll-lock");
+  };
+
+  const cx = classNames({
+    "white-background": whiteBackground,
+    "menu-scrolled":    menuScrolled,
+    "menu-active":      menuActive,
+  });
+
   return (
-    <Container background={whiteBackground}>
-      <Wrapper>
+    <Container className={cx}>
+      <Wrapper className={cx}>
         <LogoBox to={"/"} title="Klimfix- Strona główna">
           {
-            whiteBackground ? (
+            (whiteBackground || menuScrolled) ? (
               <img src={LogoDarkIcon} alt=""/>
             ) : (
               <img src={LogoIcon} alt=""/>
@@ -244,7 +309,7 @@ const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
             {
               dataMenu.map((element, i) => (
                 <NavbarListItem key={i}>
-                  <NavbarLink to={element.slug} title={element.title} dark={whiteBackground ? whiteBackground : undefined}>
+                  <NavbarLink to={element.slug} title={element.title} className={cx} onClick={handleLinkClick}>
                     {element.title}
                   </NavbarLink>
                 </NavbarListItem>
@@ -255,7 +320,7 @@ const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
         </NavbarMenuBox>
         <NavbarShowOnMobile>
           <NavbarMobileCTA href="/"/>
-          <Hamburger className={menuActive ? "menu-active" : ""} onClick={() => setMenuActive(!menuActive)}>
+          <Hamburger className={cx} onClick={() => handleClick()}>
             <span/>
             <span/>
           </Hamburger>

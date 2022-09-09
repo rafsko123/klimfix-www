@@ -15,6 +15,11 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: 'Mitr', sans-serif;
         font-size: 16px;
+        position: relative;
+
+        &.scroll-lock {
+            overflow: hidden;
+        }
     }
 
     input, select, textarea {

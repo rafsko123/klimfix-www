@@ -30,7 +30,14 @@ const StyledWrapper = styled(Wrapper)`
     background-image: url(${WatermarkBlogIcon});
     background-position: 100% -200px;
     background-repeat: no-repeat;
-    padding: 100px 0 20px 0;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        padding-top: 80px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+        padding-top: 60px;
+    }
 `;
 
 const ArticlesListing = styled.div`
@@ -48,6 +55,29 @@ const ArticleCard = styled.div`
     &:not(:nth-child(2n)) {
         margin-right: 100px;
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        width: calc(50% - 30px);
+        margin-bottom: 60px;
+
+        &:not(:nth-child(2n)) {
+            margin-right: 60px;
+        }
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+        width: calc(50% - 20px);
+        margin-bottom: 40px;
+
+        &:not(:nth-child(2n)) {
+            margin-right: 40px;
+        }
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 36px;
+    }
 `;
 
 const ArticleNumber = styled.div`
@@ -55,15 +85,20 @@ const ArticleNumber = styled.div`
     font-size: 50px;
     padding: 10px 40px 0 0;
     font-weight: 300;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 40px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+        padding: 8px 20px 0 0;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        display: none;
+    }
 `;
 
-const ArticleCardContent = styled(Link)`
+const ArticleCardContent = styled(Link)``;
 
-`;
-
-const ImageBox = styled.div`
-
-`;
+const ImageBox = styled.div``;
 
 const ArticleCardTitle = styled.div`
     color: #fff;
@@ -72,12 +107,23 @@ const ArticleCardTitle = styled.div`
     line-height: 1.5;
     font-weight: 500;
     margin-top: 24px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin-top: 18px;
+        font-size: 18px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        font-size: 16px;
+        margin-top: 12px;
+    }
 `;
 
 const TextBox = styled.div`
     margin-bottom: 96px;
     position: relative;
     z-index: 2;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin-bottom: 64px;
+    }
 `;
 
 const ArticlesList = () => {

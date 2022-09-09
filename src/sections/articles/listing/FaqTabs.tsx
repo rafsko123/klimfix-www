@@ -1,8 +1,8 @@
-import {useState}          from "react";
-import React               from "react";
-import styled              from "styled-components";
-import {DataFaq}           from "../../../data/DatFaq";
-import {TitleSm}           from "../../../components/typography/TitleSm";
+import {useState} from "react";
+import React      from "react";
+import styled     from "styled-components";
+import {DataFaq}  from "../../../data/DatFaq";
+import {TitleSm}  from "../../../components/typography/TitleSm";
 
 import ChevronDownIcon from "../../../assets/icons/chevron-down.svg";
 import ChevronUpIcon   from "../../../assets/icons/chevron-up.svg";
@@ -16,6 +16,9 @@ const StyledTitleSm = styled(TitleSm)`
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     text-transform: none;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        font-size: 14px;
+    }
 `;
 
 const FaqItemHeader = styled.div`
@@ -25,11 +28,19 @@ const FaqItemHeader = styled.div`
     background-position: calc(100% - 12px) 50%;
     background-size: 15px 9px;
     cursor: pointer;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        padding: 18px 48px 12px 0;
+        background-size: 12px 7px;
+        background-position: calc(100% - 8px) 50%;
+    }
 `;
 
 const FaqItemContent = styled.div`
     display: none;
     margin-bottom: 24px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin-bottom: 18px;
+    }
 `;
 
 const FaqItem = styled.div`
@@ -51,6 +62,13 @@ const FaqItemDescription = styled.div`
     font-size: 16px;
     padding-right: 60px;
     font-weight: 300;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 14px;
+        padding-right: 40px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+        font-size: 12px;
+    }
 `;
 
 

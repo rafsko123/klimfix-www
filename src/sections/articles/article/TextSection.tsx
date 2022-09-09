@@ -14,6 +14,16 @@ const StyledTitleSm = styled.h3`
     font-weight: 400;
     font-size: 32px;
     color: ${({theme}) => theme.colors.secondary};
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 24px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        font-size: 18px;
+        padding: 4px 0;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        font-size: 16px;
+    }
 `;
 
 const StyledDescription = styled(Description)`
@@ -42,6 +52,23 @@ const StyledDescription = styled(Description)`
             }
         }
     }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        ul {
+            li {
+                padding-left: 20px;
+
+                &:before {
+                    width: 6px;
+                    height: 6px;
+                    top: 6px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        padding: 4px 0;
+    }
 `;
 
 interface Props {
@@ -52,8 +79,16 @@ interface Props {
 const TextSection: FunctionComponent<Props> = ({title, description}) => {
   return (
     <Container>
-      <StyledTitleSm>{title}</StyledTitleSm>
-      <StyledDescription>{description}</StyledDescription>
+      {
+        title && (
+          <StyledTitleSm>{title}</StyledTitleSm>
+        )
+      }
+      {
+        description && (
+          <StyledDescription>{description}</StyledDescription>
+        )
+      }
     </Container>
   );
 };
