@@ -1,8 +1,8 @@
 import SnowFlake from "../assets/icons/snowflake.svg";
 import Vacuum    from "../assets/icons/vacuum.svg";
 
-import PriceListImage1 from "../assets/images/price-list/price-list-1.png";
-import PriceListImage2 from "../assets/images/price-list/price-list-2.png";
+import PriceListImage1 from "../assets/images/priceList/price-list-1.png";
+import PriceListImage2 from "../assets/images/priceList/price-list-2.png";
 
 
 export const DataPriceList = [
