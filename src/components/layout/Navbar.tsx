@@ -6,6 +6,7 @@ import React               from "react";
 import styled              from "styled-components";
 import {dataMenu}          from "../../data/DataMenu";
 import classNames          from "classnames";
+import {useLocation}       from "@reach/router";
 
 import LogoIcon     from "../../assets/icons/logo.svg";
 import LogoDarkIcon from "../../assets/icons/logo_dark.svg";
@@ -128,6 +129,11 @@ const NavbarListItem = styled.li`
             margin-right: 48px;
         }
     }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+        &:not(:last-child) {
+            margin-right: 36px;
+        }
+    }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
         text-align: right;
         &:not(:last-child) {
@@ -142,11 +148,16 @@ const NavbarLink = styled(Link)`
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 0.045em;
+    position: relative;
+    transition: .3s color ease;
 
     &.menu-scrolled,
     &.white-background {
         color: ${({theme}) => theme.colors.secondary};
-        transition: .3s color ease;
+    }
+
+    &:hover {
+        color: ${({theme}) => theme.colors.primary};
     }
 
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
@@ -181,9 +192,20 @@ const NavbarCTA = styled(Link)`
     text-transform: uppercase;
     font-family: 'Mitr', sans-serif;
     color: ${({theme}) => theme.colors.white};
+    transition: .3s background-color ease;
+
+    &:hover {
+        background-color: ${({theme}) => theme.colors.primaryHue};
+    }
+
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         padding: 4px 48px;
         font-size: 14px;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+        padding: 4px 32px;
+
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
         display: none;
@@ -252,6 +274,7 @@ const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
   const [whiteBackground, setWhiteBackground] = useState<boolean>(false);
   const [menuScrolled, setMenuScrolled]       = useState<boolean>(false);
   const [menuActive, setMenuActive]           = useState<boolean>(false);
+  const location                              = useLocation();
 
   const handleScroll = () => {
     if (window.scrollY > 60) {
@@ -274,7 +297,7 @@ const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
     } else {
       setWhiteBackground(false);
     }
-  }, [location.pathname]);
+  }, [location]);
 
   const handleClick = () => {
     document.body.classList.toggle("scroll-lock");
@@ -316,7 +339,7 @@ const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
               ))
             }
           </NavbarList>
-          <NavbarCTA to={"/"}>Zadzwoń!</NavbarCTA>
+          <NavbarCTA to={"/"}>Zarezerwuj wizytę</NavbarCTA>
         </NavbarMenuBox>
         <NavbarShowOnMobile>
           <NavbarMobileCTA href="/"/>

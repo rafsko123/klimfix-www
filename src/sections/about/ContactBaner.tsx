@@ -28,7 +28,7 @@ const ContactBaner = () => {
       <StyledDescription isWhite>
         Jesteśmy otwarci na propozycje współpracy. Napisz do nas lub zadzwoń!
       </StyledDescription>
-      <ButtonPrimary to="/">
+      <ButtonPrimary to="/kontakt">
         SKONTAKTUJ SIĘ Z NAMI
       </ButtonPrimary>
     </Container>

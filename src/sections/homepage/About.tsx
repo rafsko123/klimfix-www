@@ -58,6 +58,8 @@ const TextBox = styled.div`
 
 const StyledTitleSm = styled(TitleSm)`
     margin-bottom: 18px;
+    text-transform: inherit;
+
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         margin-bottom: 12px;
     }

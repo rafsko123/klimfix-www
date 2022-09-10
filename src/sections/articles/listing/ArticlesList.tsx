@@ -47,10 +47,69 @@ const ArticlesListing = styled.div`
     z-index: 2;
 `;
 
+const ArticleCardContent = styled(Link)``;
+
+const ImageBox = styled(Link)`
+    display: inline-block;
+    width: 100%;
+    position: relative;
+`;
+
+const Mask = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 24px;
+    font-weight: 500;
+    background-image: linear-gradient(180deg, rgba(0, 51, 112, 0) 0%, rgba(60, 191, 240, 0.91) 100%);
+    transition: .3s all ease;
+    opacity: 0;
+    padding-bottom: 56px;
+    
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        font-size: 20px;
+        padding-bottom: 36px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        display: none;
+    }
+`;
+
+const ArticleCardTitle = styled.div`
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-top: 24px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin-top: 18px;
+        font-size: 18px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        font-size: 16px;
+        margin-top: 12px;
+    }
+`;
+
 const ArticleCard = styled.div`
     display: flex;
     width: calc(50% - 50px);
     margin-bottom: 80px;
+
+    &:hover {
+
+        ${Mask} {
+            opacity: 1;
+        }
+    }
 
     &:not(:nth-child(2n)) {
         margin-right: 100px;
@@ -96,26 +155,6 @@ const ArticleNumber = styled.div`
     }
 `;
 
-const ArticleCardContent = styled(Link)``;
-
-const ImageBox = styled.div``;
-
-const ArticleCardTitle = styled.div`
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    line-height: 1.5;
-    font-weight: 500;
-    margin-top: 24px;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
-        margin-top: 18px;
-        font-size: 18px;
-    }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
-        font-size: 16px;
-        margin-top: 12px;
-    }
-`;
 
 const TextBox = styled.div`
     margin-bottom: 96px;
@@ -144,8 +183,9 @@ const ArticlesList = () => {
               <ArticleCard>
                 <ArticleNumber>{`0${i + 1}`}</ArticleNumber>
                 <ArticleCardContent to={`/strefa-wiedzy/${element.slug}`}>
-                  <ImageBox>
+                  <ImageBox to={`/strefa-wiedzy/${element.slug}`}>
                     {element.list}
+                    <Mask>Czytaj</Mask>
                   </ImageBox>
                   <ArticleCardTitle>
                     {element.title}

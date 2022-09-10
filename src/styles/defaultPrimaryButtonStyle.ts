@@ -18,7 +18,6 @@ export const defaultPrimaryButtonStyle = css`
 
     &:hover {
         background-color: ${({theme}) => theme.colors.primaryHue};
-
     }
 
     &:disabled {

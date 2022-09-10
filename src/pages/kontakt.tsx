@@ -90,12 +90,13 @@ const TextBox = styled.div`
         padding-left: 56px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
-        padding-left: 0px;
+        padding-left: 0;
     }
 `;
 
 const StyledTitleSm = styled(TitleSm)`
     margin-bottom: 18px;
+    text-transform: inherit;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         margin-bottom: 12px;
     }
@@ -168,6 +169,11 @@ const ContactBoxLink = styled.a`
     font-weight: 300;
     font-family: 'Poppins', sans-serif;
     display: inline-block;
+    transition: .3s color ease;
+
+    &:hover {
+        color: ${({theme}) => theme.colors.primary}
+    }
 
     &:not(:last-child) {
         margin-bottom: 8px;

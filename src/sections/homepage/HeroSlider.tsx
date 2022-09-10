@@ -9,11 +9,11 @@ import {TitleSm}                from "../../components/typography/TitleSm";
 import {TitleXl}                from "../../components/typography/TitleXl";
 import {useHeroSliderData}      from "../../hooks/heroSliderData/useHeroSliderData";
 
-//slide arrows
+// slide arrows
 import ChevronLeft  from "../../assets/icons/chevron_left.svg";
 import ChevronRight from "../../assets/icons/chevron_right.svg";
 
-// Import Swiper styles
+// swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -40,6 +40,7 @@ const Container = styled.div`
             .image-box {
                 width: 100%;
                 height: 100%;
+                transition: transform 7s ease-in .4s, opacity 0.5s ease-in 7s;
 
                 .gatsby-image-wrapper {
                     width: 100%;
@@ -107,6 +108,12 @@ const Container = styled.div`
                 transform: translateY(-50%);
                 z-index: 4;
                 color: white;
+            }
+
+            &.swiper-slide-active {
+                .image-box {
+                    transform: scale(1.06);
+                }
             }
         }
     }
@@ -195,6 +202,7 @@ const SlideTextBox = styled.div`
 const StyledTitleSm = styled(TitleSm)`
     margin-bottom: 18px;
     display: inline-block;
+    text-transform: inherit;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         margin-bottom: 12px;
     }
@@ -209,8 +217,8 @@ const HeroSlider = () => {
         modules={[Navigation, Pagination, EffectFade, Autoplay]}
         navigation
         pagination={{clickable: true}}
-        autoplay={{delay: 4000}}
-        speed={800}
+        autoplay={{delay: 6000}}
+        speed={1000}
         effect="fade"
         loop={true}
       >

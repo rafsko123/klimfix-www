@@ -16,9 +16,16 @@ const StyledTitleSm = styled(TitleSm)`
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     text-transform: none;
+    transition: .3s color ease;
+
+    &:hover {
+        color: ${({theme}) => theme.colors.primary};
+    }
+
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
         font-size: 14px;
     }
+
 `;
 
 const FaqItemHeader = styled.div`
