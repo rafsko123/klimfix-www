@@ -4,6 +4,7 @@ import {Autoplay}               from "swiper";
 import {EffectFade}             from "swiper";
 import {Navigation, Pagination} from "swiper";
 import {Swiper, SwiperSlide}    from "swiper/react";
+import ButtonPrimary            from "../../components/buttons/ButtonPrimary";
 import {Wrapper}                from "../../components/layout/Wrapper";
 import {TitleSm}                from "../../components/typography/TitleSm";
 import {TitleXl}                from "../../components/typography/TitleXl";
@@ -186,6 +187,13 @@ const StyledWrapper = styled(Wrapper)`
     }
 `;
 
+const ButtonWrapper = styled.div`
+    margin-top: 36px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        margin-top: 24px;
+    }
+`;
+
 const SlideTextBox = styled.div`
     max-width: 860px;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopBig}) {
@@ -241,6 +249,9 @@ const HeroSlider = () => {
                   <TitleXl as="div" isWhite>
                     {slide.title}
                   </TitleXl>
+                  <ButtonWrapper>
+                    <ButtonPrimary href={`tel:${slide.ctaUrl}`}>{slide.ctaText}</ButtonPrimary>
+                  </ButtonWrapper>
                 </SlideTextBox>
               </StyledWrapper>
             </SwiperSlide>

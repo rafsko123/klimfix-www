@@ -11,6 +11,7 @@ import {TitleLg}        from "../../components/typography/TitleLg";
 import FBIcon        from "../../assets/icons/fb_white.svg";
 import IGIcon        from "../../assets/icons/ig_white.svg";
 import WatermarkIcon from "../../assets/icons/watermark.svg";
+import {DataSocials} from "../../data/DataSocials";
 
 
 const StyledSection = styled(Section)`
@@ -107,6 +108,7 @@ const ImageBox = styled.div`
 
 const StyledTitleLg = styled(TitleLg)`
     color: #fff;
+    line-height: 1.2;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         font-size: 40px;
     }
@@ -123,7 +125,12 @@ const StyledTitleLg = styled(TitleLg)`
 
 const StyledDescription = styled(Description)`
     color: #fff;
-    margin: 24px 0 36px 0;
+    line-height: 1.5;
+    margin: 24px 0 48px 0;
+    font-weight: 500;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        margin: 24px 0 36px 0;
+    }
 `;
 
 const SocialsButtons = styled.div`
@@ -220,11 +227,11 @@ const Socials = () => {
             motoryzacyjnego humoru.
           </StyledDescription>
           <SocialsButtons>
-            <SocialButton href="facebook.com/serwisklimfix" rel="noopener" target="_blank" className="facebook-link">
+            <SocialButton href={DataSocials.facebook} rel="noopener" target="_blank" className="facebook-link">
               <img src={FBIcon} alt=""/>
               Polub na Facebook’u!
             </SocialButton>
-            <SocialButton href="#" rel="noopener" target="_blank" className="instagram-link">
+            <SocialButton href={DataSocials.instagram} rel="noopener" target="_blank" className="instagram-link">
               <img src={IGIcon} alt=""/>
               Zaobserwuj na IG!
             </SocialButton>

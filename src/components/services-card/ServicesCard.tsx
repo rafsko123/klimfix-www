@@ -44,7 +44,13 @@ const BackgroundImage = styled.div`
     background-color: #003370;
     background-repeat: no-repeat;
     background-position: left bottom;
+    background-size: cover;
     background-image: linear-gradient(180deg, rgba(0, 51, 112, 0) 0%, rgba(60, 191, 240, 0.81) 100%);
+
+    .gatsby-image-wrapper {
+        width: 100%;
+        height: 100%;
+    }
 `;
 
 const IconBox = styled.div`
@@ -85,8 +91,13 @@ const StyledDescription = styled(Description)`
     color: #ffffff;
     text-align: center;
     padding: 0 36px 64px 36px;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+    font-size: 14px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         padding: 0 24px 48px 24px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+        max-width: 400px;
+        width: 100%;
     }
 `;
 

@@ -1,8 +1,9 @@
-import {Link}    from "gatsby";
-import React     from "react";
-import styled    from "styled-components";
-import {TitleSm} from "../typography/TitleSm";
-import {Wrapper} from "./Wrapper";
+import {Link}        from "gatsby";
+import React         from "react";
+import styled        from "styled-components";
+import {DataSocials} from "../../data/DataSocials";
+import {TitleSm}     from "../typography/TitleSm";
+import {Wrapper}     from "./Wrapper";
 
 import PhoneIcon    from "../../assets/icons/phone.svg";
 import EnvelopeIcon from "../../assets/icons/envelope.svg";
@@ -14,7 +15,7 @@ import LogoIcon     from "../../assets/icons/logo_footer.svg";
 
 const Container = styled.div`
     background-color: ${({theme}) => theme.colors.secondary};
-    padding: 64px 0 96px 0;
+    padding: 64px 0 48px 0;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         padding: 56px 0 72px 0;
     }
@@ -102,7 +103,7 @@ const TitleList = styled.h4`
         font-size: 16px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
-        font-size: 14px;
+        font-size: 18px;
     }
 `;
 
@@ -120,14 +121,21 @@ const ListIcon = styled.div`
             height: 18px;
         }
         @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
-            width: 12px;
-            height: 12px;
+            width: 24px;
+            height: 24px;
         }
     }
 `;
 
 const ListLine = styled.div`
     padding-left: 24px;
+
+    &.custom-line {
+        .custom-box {
+            margin-bottom: 6px;
+        }
+    }
+
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         padding-left: 18px;
     }
@@ -152,7 +160,7 @@ const ListLink = styled.a`
     }
 
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
-        font-size: 12px;
+        font-size: 16px;
     }
 `;
 
@@ -172,7 +180,7 @@ const ListSpan = styled.span`
     }
 
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
-        font-size: 12px;
+        font-size: 16px;
     }
 `;
 
@@ -201,8 +209,8 @@ const CopyRights = styled.div`
     color: rgba(255, 255, 255, 0.3);
     margin-right: 48px;
     font-weight: 300;
-    font-size: ${({theme}) => theme.fonts.desktop.xs};
     display: inline;
+    font-size: 14px;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         margin-right: 36px;
         font-size: 12px;
@@ -224,7 +232,7 @@ const FooterBox = styled.div`
 const StyledLink = styled(Link)`
     color: rgba(255, 255, 255, 0.3);
     font-weight: 300;
-    font-size: ${({theme}) => theme.fonts.desktop.xs};
+    font-size: 14px;
     display: inline-block;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         font-size: 12px;
@@ -235,10 +243,17 @@ const StyledLink = styled(Link)`
     }
 `;
 
-const Realization = styled.div`
+const Realization = styled(Link)`
+    display: inline-block;
     color: rgba(255, 255, 255, 0.3);
     font-weight: 300;
-    font-size: ${({theme}) => theme.fonts.desktop.xs};
+    font-size: 14px;
+    transition: .3s color ease;
+
+    &:hover {
+        color: ${({theme}) => theme.colors.primary};
+    }
+
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         font-size: 12px;
     }
@@ -278,17 +293,19 @@ const Footer = () => {
                 <ListIcon>
                   <img src={PinIcon} alt=""/>
                 </ListIcon>
-                <ListLine>
-                  <ListSpan><b>Rzeszów</b> Krakowska 20,</ListSpan><br/>
-                  <ListSpan>35-111 Rzeszów</ListSpan>
-                  <br/>
-                  <br/>
-                  <ListSpan><b>Rzeszów</b> Podwisłocze 30,</ListSpan><br/>
-                  <ListSpan>35-309 Rzeszów</ListSpan>
-                  <br/>
-                  <br/>
-                  <ListSpan><b>Tyczyn</b> Orkana 1</ListSpan><br/>
-                  <ListSpan>36-020 Tyczyn</ListSpan>
+                <ListLine className="custom-line">
+                  <div className="custom-box">
+                    <ListSpan><b>Rzeszów</b> Krakowska 20,</ListSpan><br/>
+                    <ListSpan>35-111 Rzeszów</ListSpan>
+                  </div>
+                  <div className="custom-box">
+                    <ListSpan><b>Rzeszów</b> Podwisłocze 30,</ListSpan><br/>
+                    <ListSpan>35-309 Rzeszów</ListSpan>
+                  </div>
+                  <div className="custom-box">
+                    <ListSpan><b>Tyczyn</b> Orkana 1</ListSpan><br/>
+                    <ListSpan>36-020 Tyczyn</ListSpan>
+                  </div>
                 </ListLine>
               </ListContent>
             </ListItem>
@@ -299,7 +316,7 @@ const Footer = () => {
                   <img src={FBIcon} alt=""/>
                 </ListIcon>
                 <ListLine>
-                  <ListLink href="/" title="Klimfix - facebook" target="_blank" rel="noopener">facebook.com/serwisklimfix</ListLink><br/>
+                  <ListLink href={DataSocials.facebook} title="Klimfix - facebook" target="_blank" rel="noopener">facebook.com/serwisklimfix</ListLink><br/>
                 </ListLine>
               </ListContent>
               <ListContent>
@@ -307,7 +324,7 @@ const Footer = () => {
                   <img src={IGIcon} alt=""/>
                 </ListIcon>
                 <ListLine>
-                  <ListLink href="/" title="Klimfix - instagram" target="_blank" rel="noopener">@serwis_klimfix</ListLink>
+                  <ListLink href={DataSocials.instagram} title="Klimfix - instagram" target="_blank" rel="noopener">@serwis_klimfix</ListLink>
                 </ListLine>
               </ListContent>
             </ListItem>
@@ -324,7 +341,7 @@ const Footer = () => {
             <StyledLink to={"/"}>Polityka Prywatności</StyledLink>
           </FooterBox>
           <div>
-            <Realization>
+            <Realization to={DataSocials.designer}>
               Project by Daria Pyziak Design
             </Realization>
           </div>

@@ -47,7 +47,7 @@ const ArticlesListing = styled.div`
     z-index: 2;
 `;
 
-const ArticleCardContent = styled(Link)``;
+const ArticleCardContent = styled.div``;
 
 const ImageBox = styled(Link)`
     display: inline-block;
@@ -65,30 +65,33 @@ const Mask = styled.div`
     color: #ffffff;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    font-size: 24px;
+    align-items: center;
+    font-size: 50px;
     font-weight: 500;
-    background-image: linear-gradient(180deg, rgba(0, 51, 112, 0) 0%, rgba(60, 191, 240, 0.91) 100%);
+    background: linear-gradient(0deg, rgba(0, 201, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 51, 112, 0.57);
     transition: .3s all ease;
     opacity: 0;
-    padding-bottom: 56px;
-    
+    text-transform: uppercase;
+
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
-        font-size: 20px;
-        padding-bottom: 36px;
+        font-size: 40px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+        font-size: 30px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
         display: none;
     }
 `;
 
-const ArticleCardTitle = styled.div`
+const ArticleCardTitle = styled(Link)`
+    display: inline-block;
     color: #fff;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     line-height: 1.5;
     font-weight: 500;
-    margin-top: 24px;
+    margin-top: 18px;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         margin-top: 18px;
         font-size: 18px;
@@ -142,13 +145,14 @@ const ArticleCard = styled.div`
 const ArticleNumber = styled.div`
     color: #fff;
     font-size: 50px;
-    padding: 10px 40px 0 0;
+    line-height: 1;
+    padding: 0 40px 0 0;
     font-weight: 300;
+    transform: translateY(-10px);
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         font-size: 40px;
-    }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
-        padding: 8px 20px 0 0;
+        transform: translateY(-4px);
+
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
         display: none;
@@ -182,12 +186,12 @@ const ArticlesList = () => {
             data.map((element, i) => (
               <ArticleCard>
                 <ArticleNumber>{`0${i + 1}`}</ArticleNumber>
-                <ArticleCardContent to={`/strefa-wiedzy/${element.slug}`}>
+                <ArticleCardContent>
                   <ImageBox to={`/strefa-wiedzy/${element.slug}`}>
                     {element.list}
                     <Mask>Czytaj</Mask>
                   </ImageBox>
-                  <ArticleCardTitle>
+                  <ArticleCardTitle to={`/strefa-wiedzy/${element.slug}`}>
                     {element.title}
                   </ArticleCardTitle>
                 </ArticleCardContent>

@@ -18,8 +18,7 @@ const ContactBaner = () => {
   return (
     <Container>
       <StyledTitleMd>
-        Stawiamy komfort<br/>
-        jazdy na pierwszym miejscu!
+        Stawiamy komfort jazdy na <br/>pierwszym miejscu!
       </StyledTitleMd>
       <ButtonPrimary to={"/"}>Zarezerwuj wizytę</ButtonPrimary>
     </Container>

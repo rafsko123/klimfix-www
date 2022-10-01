@@ -49,15 +49,15 @@ const StyledWrapper = styled(Wrapper)`
 `;
 
 const ImageBox = styled.div`
-    height: 600px;
+    height: 500px;
     width: calc(100% - 400px);
     padding-left: 64px;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
-        height: 460px;
+        height: 400px;
         padding-left: 48px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
-        height: 300px;
+        height: 200px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
         width: 100%;

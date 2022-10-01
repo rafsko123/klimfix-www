@@ -26,6 +26,14 @@ const useServicesData = () => {
       slug:        "/uslugi-i-cennik",
       buttonText:  "Sprawdź cennik",
     },
+    {
+      title:       <>SPRZĄTANIE<br/>WNĘTRZA AUTA</>,
+      description: "Odświeżymy wnętrze Twojego auta. W usługach oferujemy m.in. odkurzanie, pranie tapicerki i czyszczenie skór. Czyste wnętrze to komfort jazdy!",
+      icon:        VacuumImage,
+      image:       <Img fluid={image.service_image_2.childImageSharp.fluid}/>,
+      slug:        "/uslugi-i-cennik",
+      buttonText:  "Sprawdź cennik",
+    },
   ];
 };
 

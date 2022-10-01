@@ -97,7 +97,7 @@ const TextBox = styled.div`
 const Line = styled.div`
     color: ${({theme}) => theme.colors.secondary};
     font-size: 12px;
-    font-weight: 300;
+    font-weight: 400;
 `;
 
 const BoldedLine = styled(Line)`

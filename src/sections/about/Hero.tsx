@@ -38,12 +38,12 @@ const Hero = () => {
       <TextColumns>
         <TextColumn>
           <Description isWhite>
-            Jesteśmy polską firmą motoryzacyjną działającą na terenie Podkarpacia. Nasza siedziba znajduje się w Rzeszowie. <strong>Zajmujemy się klimatyzacją samochodową oraz pielęgnacją samochodową,</strong> obsługujemy klientów zarówno prywatnych jak i biznesowych.
+            Jesteśmy polską firmą motoryzacyjną działającą na&nbsp;terenie Podkarpacia. Nasza siedziba znajduje się w&nbsp;Rzeszowie. <strong>Zajmujemy się klimatyzacją samochodową oraz pielęgnacją samochodową,</strong> obsługujemy klientów zarówno prywatnych jak i&nbsp;biznesowych.
           </Description>
         </TextColumn>
         <TextColumn>
           <Description isWhite>
-            Naszymi usługami zapewniamy wygodną jazdę w czystym, schłodzonym aucie. <strong>Regularnie rozszerzamy naszą ofertę i szkolimy pracowników.</strong> Z wykorzystaniem naszego sprzętu podejmujemy się również
+            Naszymi usługami zapewniamy wygodną jazdę w&nbsp;czystym, schłodzonym aucie. <strong>Regularnie rozszerzamy naszą ofertę i&nbsp;szkolimy pracowników.</strong> Z&nbsp;wykorzystaniem naszego sprzętu podejmujemy się&nbsp;również
           </Description>
         </TextColumn>
       </TextColumns>

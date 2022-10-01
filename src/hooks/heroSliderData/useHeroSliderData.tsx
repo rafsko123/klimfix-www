@@ -8,22 +8,28 @@ const useHeroSliderData = () => {
 
   return [
     {
-      title:    "Schłodzone i czyste wnętrze auta",
-      subtitle: "Profesjonalnie dbamy o:",
+      title:    <>Schłodzone<br/> i czyste<br/> wnętrze auta</>,
+      subtitle: "Profesjonalnie dbamy o",
       image:    <Img fluid={image.slide_1.childImageSharp.fluid}/>,
       slug:     "",
+      ctaText:  "Zarezerwuj wizytę",
+      ctaUrl:   "+48534520569",
     },
     {
       title:    <>Napełnianie czynnikiem R144A&nbsp;i&nbsp;R1234YF</>,
       subtitle: "Najwyższy czas pomyśleć o lecie!",
       image:    <Img fluid={image.slide_2.childImageSharp.fluid}/>,
       slug:     "",
+      ctaText:  "Zarezerwuj wizytę",
+      ctaUrl:   "+48534520569",
     },
     {
       title:    "OTWORZYLIŚMY SEZON!",
       subtitle: "Najwyższy czas pomyśleć o lecie!",
       image:    <Img fluid={image.slide_3.childImageSharp.fluid}/>,
       slug:     "",
+      ctaText:  "Zarezerwuj wizytę",
+      ctaUrl:   "+48534520569",
     },
   ];
 };

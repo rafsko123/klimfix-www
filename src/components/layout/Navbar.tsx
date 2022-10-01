@@ -61,7 +61,8 @@ const Wrapper = styled.div`
 `;
 
 const LogoBox = styled(Link)`
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     width: 120px;
 
     img {
@@ -164,7 +165,7 @@ const NavbarLink = styled(Link)`
         font-size: 14px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
-        font-size: 16px;
+        font-size: 18px;
         color: #fff !important;
     }
 `;

@@ -187,6 +187,8 @@ const ServicePrice = styled.div`
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     white-space: nowrap;
+    color: #152D6D;
+    text-transform: uppercase;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         font-size: 18px;
     }

@@ -16,15 +16,15 @@ const StyledWrapper = styled(Wrapper)`
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
         margin-top: 48px;
     }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
         flex-wrap: wrap;
         margin-top: 0;
     }
 `;
 
 const ServicesItem = styled.div`
-    width: calc(50% - 12px);
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+    width: calc(33.33% - 12px);
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
         width: 100%;
         &:not(:last-child) {
             margin-bottom: 72px;

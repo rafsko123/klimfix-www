@@ -6,27 +6,22 @@ import {TitleMd}     from "../../components/typography/TitleMd";
 
 
 const Container = styled.div`
-    max-width: 400px;
     text-align: center;
     margin: 120px auto 0 auto;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
-        max-width: 280px;
-    }
 `;
 
 const StyledDescription = styled(Description)`
     margin: 24px 0;
-
 `;
 
 const ContactBaner = () => {
   return (
     <Container>
       <TitleMd isWhite>
-        CHCESZ Z NAMI WSPÓŁPRACOWAĆ?
+        CHCESZ Z NAMI<br/>WSPÓŁPRACOWAĆ?
       </TitleMd>
       <StyledDescription isWhite>
-        Jesteśmy otwarci na propozycje współpracy. Napisz do nas lub zadzwoń!
+        Jesteśmy otwarci na propozycje współpracy. <br/>Napisz do nas lub zadzwoń!
       </StyledDescription>
       <ButtonPrimary to="/kontakt">
         SKONTAKTUJ SIĘ Z NAMI
