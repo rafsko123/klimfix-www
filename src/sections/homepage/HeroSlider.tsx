@@ -222,7 +222,9 @@ const StyledTitleSm = styled(TitleSm)`
 `;
 
 const HeroSlider = () => {
-  const data = useHeroSliderData();
+  const data         = useHeroSliderData();
+  const windowGlobal = typeof window !== "undefined" && window;
+
 
   return (
     <Container>
@@ -240,7 +242,7 @@ const HeroSlider = () => {
             <SwiperSlide key={i}>
               <div className="image-box">
                 {
-                  window.innerWidth > 601 ? (
+                  windowGlobal.innerWidth > 601 ? (
                     <>{slide.image}</>
                   ) : (
                     <>{slide.imageMobile}</>
