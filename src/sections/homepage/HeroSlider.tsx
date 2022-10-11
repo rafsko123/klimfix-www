@@ -225,7 +225,6 @@ const HeroSlider = () => {
   const data         = useHeroSliderData();
   const windowGlobal = typeof window !== "undefined" && window;
 
-
   return (
     <Container>
       <Swiper
@@ -242,7 +241,7 @@ const HeroSlider = () => {
             <SwiperSlide key={i}>
               <div className="image-box">
                 {
-                  windowGlobal.innerWidth > 601 ? (
+                  windowGlobal && window.innerWidth > 601 ? (
                     <>{slide.image}</>
                   ) : (
                     <>{slide.imageMobile}</>
