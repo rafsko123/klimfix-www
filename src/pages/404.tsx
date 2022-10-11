@@ -73,11 +73,12 @@ const NotFoundPage = () => {
     <Container>
       <Code>404</Code>
       <StyledTitleLg>Strona której szukasz nie istnieje!</StyledTitleLg>
-      <ButtonPrimary to="/">Strona głowna</ButtonPrimary>
+      <ButtonPrimary to="/">Strona główna</ButtonPrimary>
     </Container>
   );
 };
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>Not found</title>;
+export const Head: HeadFC = () => <title>Klimfix | 404</title>;
+

@@ -1,6 +1,7 @@
 import {FunctionComponent} from "react";
 import React               from "react";
 import {ThemeProvider}     from "styled-components";
+import CookiesBox          from "../components/cookies/Cookies";
 import Footer              from "../components/layout/Footer";
 import Navbar              from "../components/layout/Navbar";
 import {MainTheme}         from "../shared/Theme";
@@ -24,6 +25,7 @@ const Layout: FunctionComponent<Props> = ({path, children, pageContext}) => {
         <Navbar path={path}/>
         {children}
         <Footer/>
+        <CookiesBox/>
       </ThemeProvider>
     );
   }

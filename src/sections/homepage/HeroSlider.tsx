@@ -52,7 +52,9 @@ const Container = styled.div`
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    object-position: right;
+                    object-position: left;
+                    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+                    }
                 }
             }
 
@@ -114,6 +116,9 @@ const Container = styled.div`
             &.swiper-slide-active {
                 .image-box {
                     transform: scale(1.06);
+                    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+                        transform: none;
+                    }
                 }
             }
         }
@@ -225,7 +230,7 @@ const HeroSlider = () => {
         modules={[Navigation, Pagination, EffectFade, Autoplay]}
         navigation
         pagination={{clickable: true}}
-        autoplay={{delay: 6000}}
+        autoplay={{delay: 8000}}
         speed={1000}
         effect="fade"
         loop={true}
@@ -234,7 +239,13 @@ const HeroSlider = () => {
           data.map((slide, i) => (
             <SwiperSlide key={i}>
               <div className="image-box">
-                {slide.image}
+                {
+                  window.innerWidth > 601 ? (
+                    <>{slide.image}</>
+                  ) : (
+                    <>{slide.imageMobile}</>
+                  )
+                }
               </div>
               <div className="slide-background">
                 <div/>

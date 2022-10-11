@@ -1,3 +1,4 @@
+import {HeadFC}     from "gatsby";
 import React        from "react";
 import styled       from "styled-components";
 import {Wrapper}    from "../components/layout/Wrapper";
@@ -81,3 +82,5 @@ const About = () => {
 };
 
 export default About;
+
+export const Head: HeadFC = () => <title>Klimfix | O nas</title>;

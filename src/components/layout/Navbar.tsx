@@ -182,7 +182,7 @@ const NavbarShowOnMobile = styled.div`
     }
 `;
 
-const NavbarCTA = styled(Link)`
+const NavbarCTA = styled.a`
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -293,7 +293,7 @@ const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
   }, []);
 
   useEffect(() => {
-    if (path === "/uslugi-i-cennik/" || path === "/nasze-lokalizacje/" || path === "/strefa-wiedzy/") {
+    if (path === "/uslugi-i-cennik/" || path === "/nasze-lokalizacje/" || path === "/strefa-wiedzy/" || path === "/polityka-prywatnosci/" ) {
       setWhiteBackground(true);
     } else {
       setWhiteBackground(false);
@@ -340,10 +340,10 @@ const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
               ))
             }
           </NavbarList>
-          <NavbarCTA to={"/"}>Zarezerwuj wizytę</NavbarCTA>
+          <NavbarCTA href="tel:+48534520569">Zadzwoń</NavbarCTA>
         </NavbarMenuBox>
         <NavbarShowOnMobile>
-          <NavbarMobileCTA href="/"/>
+          <NavbarMobileCTA href="tel:+48534520569"/>
           <Hamburger className={cx} onClick={() => handleClick()}>
             <span/>
             <span/>

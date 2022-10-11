@@ -52,21 +52,28 @@ const ImageBox = styled.div`
     height: 500px;
     width: calc(100% - 400px);
     padding-left: 64px;
+
+    .gatsby-image-wrapper {
+        width: 100%;
+        height: 100%;
+        img {
+            object-fit: contain !important;
+        }
+    }
+
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         height: 400px;
         padding-left: 48px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
-        height: 200px;
+        height: 300px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
         width: 100%;
+        height: 340px;
+        border: 1px solid red;
         margin-bottom: 36px;
         padding-left: 0;
-        .gatsby-image-wrapper {
-            width: 100%;
-            height: 100%;
-        }
     }
 `;
 

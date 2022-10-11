@@ -1,3 +1,4 @@
+import React     from "react";
 import SnowFlake from "../assets/icons/snowflake.svg";
 import Vacuum    from "../assets/icons/vacuum.svg";
 
@@ -7,8 +8,9 @@ import PriceListImage2 from "../assets/images/priceList/price-list-2.png";
 
 export const DataPriceList = [
   {
+    id:          "serwis-klimatyzacji",
     title:       "SERWIS KLIMATYZACJI",
-    description: "W sytuacji rozszczelnienia układu w terminie od 1 do 30 dni od wykonania usługi (po usunięciu usterki nieszczelności we własnym zakresie) napełniamy układ w cenie 60zł (czynnnik R134a) lub 100zł (czynnik R1234yf) bez względu na ilość czynnika (po zwróceniu wydruku z maszyny).\n",
+    description: <>W sytuacji rozszczelnienia układu w&nbsp;terminie od 1 do 30 dni od wykonania usługi (po usunięciu usterki nieszczelności we&nbsp;własnym zakresie) napełniamy układ w&nbsp;cenie 60zł (czynnnik R134a) lub 100zł (czynnik R1234yf) bez względu na ilość czynnika (po zwróceniu wydruku z&nbsp;maszyny).</>,
     icon:        SnowFlake,
     image:       PriceListImage1,
     content:     [
@@ -51,8 +53,9 @@ export const DataPriceList = [
     ],
   },
   {
+    id:          "pielegnacja-samochodowa",
     title:       "PIELĘGNACJA SAMOCHODOWA",
-    description: "Cena zależna jest od typu pojazdu (osobowe, SUV, VAN, crossover) oraz stopnia zabrudzenia (sierść, błoto itp.). Usługa jest wyceniana indywidualnie. Nie ponosimy odpowiedzialności za rzeczy pozostawione w aucie.\n",
+    description: <>Cena zależna jest od typu pojazdu (osobowe, SUV, VAN, crossover) oraz stopnia zabrudzenia (sierść, błoto itp.). Usługa jest wyceniana indywidualnie. Nie ponosimy odpowiedzialności za rzeczy pozostawione w&nbsp;aucie.</>,
     icon:        Vacuum,
     image:       PriceListImage2,
     content:     [

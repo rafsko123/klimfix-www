@@ -1,3 +1,4 @@
+import {HeadFC}         from "gatsby";
 import React            from "react";
 import SubpageContainer from "../components/layout/SubpageContainer";
 import {Wrapper}        from "../components/layout/Wrapper";
@@ -22,3 +23,5 @@ const LocalisationsPage = () => {
 };
 
 export default LocalisationsPage;
+
+export const Head: HeadFC = () => <title>Klimfix | Nasze lokalizacje</title>;

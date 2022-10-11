@@ -58,19 +58,16 @@ const PriceListHeader = styled.div`
 const ImageBox = styled.div`
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
-
-    .gatsby-image-wrapper {
-        width: 100%;
-        height: 100%;
-    }
+    text-align: right;
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: right;
     }
 `;
 
@@ -89,11 +86,9 @@ const IconBox = styled.div`
         height: 36px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
-        width: 30px;
-        height: 30px;
-    }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
-        display: none;
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
     }
 `;
 
@@ -111,6 +106,9 @@ const HeaderTextWrapper = styled.div`
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
         padding: 0 24px;
     }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        padding: 0 6px;
+    }
 `;
 
 const StyledTitleSm = styled(TitleSm)`
@@ -123,10 +121,10 @@ const StyledTitleSm = styled(TitleSm)`
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
         width: 100%;
-        text-align: center;
         line-height: 1.2;
-        margin-left: 0;
-        font-size: 22px;
+        margin-left: 18px;
+        font-size: 20px;
+        padding-right: 24px;
     }
 `;
 
@@ -217,7 +215,7 @@ const PriceList = () => {
     <Container>
       {
         DataPriceList.map((element, i) => (
-          <PriceListItem key={i}>
+          <PriceListItem key={i} id={element.id}>
             <PriceListHeader>
               <ImageBox>
                 <img src={element.image} alt=""/>

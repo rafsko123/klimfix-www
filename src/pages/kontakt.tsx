@@ -1,3 +1,4 @@
+import {HeadFC}  from "gatsby";
 import React     from "react";
 import styled    from "styled-components";
 import {Wrapper} from "../components/layout/Wrapper";
@@ -6,7 +7,8 @@ import {TitleSm} from "../components/typography/TitleSm";
 
 import PhoneIcon    from "../assets/icons/phone.svg";
 import EnvelopeIcon from "../assets/icons/envelope.svg";
-import CarBg        from "../assets/images/contact/car.png";
+import ContactBg    from "../assets/images/contact/contact-bg.png";
+import MobileBg     from "../assets/images/contact/mobile-bg.png";
 import Watermark    from "../assets/icons/watermark_contact.svg";
 
 
@@ -15,57 +17,29 @@ const Container = styled.div`
     background-color: ${({theme}) => theme.colors.secondary};
     min-height: 635px;
     height: 100vh;
-    background-image: linear-gradient(180deg, rgba(0, 51, 112, 0) 0%, rgba(60, 191, 240, 0.81) 100%);
+    background-image: url(${ContactBg});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
         height: 600px;
+        min-height: 0;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
-        height: 400px;
         min-height: 320px;
         padding-right: 0;
     }
-`;
-
-const BackgroundImage = styled.div`
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 50%;
-    height: 100%;
-    background-image: url(${CarBg});
-    background-size: contain;
-    background-position: right;
-    background-repeat: no-repeat;
-    z-index: 2;
-    overflow: hidden;
-
-    &:after {
-        content: '';
-        display: block;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 10px;
-        right: -10px;
-        background-image: linear-gradient(180deg, rgba(0, 51, 112, 0) 0%, #003370 83.62%);
-        background-repeat: no-repeat;
-        background-size: cover;
-        z-index: 2;
-        transform: rotate(-90deg);
-        @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
-            left: 64px;
-        }
-    }
-
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
-        display: none;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        background-image: url(${MobileBg});
+        background-position: bottom;
+        background-size: 100% auto;
     }
 `;
+
 
 const StyledWrapper = styled(Wrapper)`
     display: flex;
+    width: 100%;
     height: 100%;
     align-items: center;
     position: relative;
@@ -195,7 +169,6 @@ const ContactBoxLink = styled.a`
 const Contact = () => {
   return (
     <Container>
-      <BackgroundImage/>
       <StyledWrapper>
         <Column>
           <TextBox>
@@ -237,3 +210,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+export const Head: HeadFC = () => <title>Klimfix | Kontakt</title>;

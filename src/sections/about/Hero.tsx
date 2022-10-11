@@ -43,7 +43,7 @@ const Hero = () => {
         </TextColumn>
         <TextColumn>
           <Description isWhite>
-            Naszymi usługami zapewniamy wygodną jazdę w&nbsp;czystym, schłodzonym aucie. <strong>Regularnie rozszerzamy naszą ofertę i&nbsp;szkolimy pracowników.</strong> Z&nbsp;wykorzystaniem naszego sprzętu podejmujemy się&nbsp;również
+            Naszymi usługami zapewniamy wygodną jazdę w&nbsp;czystym, schłodzonym aucie. <strong>Regularnie rozszerzamy naszą ofertę i&nbsp;szkolimy pracowników.</strong> Dbamy, by&nbsp;każdy nasz punkt oferował usługi na&nbsp;wysokim poziomie.
           </Description>
         </TextColumn>
       </TextColumns>

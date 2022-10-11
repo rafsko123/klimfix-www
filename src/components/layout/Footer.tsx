@@ -26,7 +26,7 @@ const StyledWrapper = styled(Wrapper)``;
 const ColumnWrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
         flex-direction: column;
         justify-content: flex-start;
     }
@@ -34,11 +34,11 @@ const ColumnWrapper = styled.div`
 
 const Column = styled.div`
     display: flex;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
         width: 100%;
         justify-content: space-between;
     }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
         flex-direction: column;
     }
 `;
@@ -68,7 +68,7 @@ const ListItem = styled.div`
             margin-right: 36px;
         }
     }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
         &:not(:last-child) {
             margin-right: 0;
             margin-bottom: 36px;
@@ -90,6 +90,9 @@ const LogoBox = styled.div`
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
         padding: 48px 0;
         width: 100%;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        text-align: center;
     }
 `;
 
@@ -338,7 +341,7 @@ const Footer = () => {
         <FooterBottom>
           <FooterBox>
             <CopyRights>Klimfix {new Date().getFullYear()}</CopyRights>
-            <StyledLink to={"/"}>Polityka Prywatności</StyledLink>
+            <StyledLink to={"/polityka-prywatnosci"}>Polityka Prywatności</StyledLink>
           </FooterBox>
           <div>
             <Realization to={DataSocials.designer}>

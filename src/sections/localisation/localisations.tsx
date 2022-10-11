@@ -30,6 +30,13 @@ const LocalisationItem = styled.div`
         flex-wrap: wrap;
         margin: 36px 0;
     }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        &:not(:last-child) {
+            padding-bottom: 48px;
+            margin-top: 48px;
+            border-bottom: 1px solid #f2f2f2;
+        }
+    }
 `;
 
 const MediaBox = styled.div`

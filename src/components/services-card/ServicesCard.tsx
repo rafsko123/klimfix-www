@@ -126,7 +126,7 @@ const ServicesCard: FunctionComponent<Props> = ({element}) => {
         <StyledDescription>
           {element.description}
         </StyledDescription>
-        <ButtonPrimary to={element.slug}>{element.buttonText}</ButtonPrimary>
+        <ButtonPrimary anchor={element.slug}>{element.buttonText}</ButtonPrimary>
       </Wrapper>
     </Container>
   );

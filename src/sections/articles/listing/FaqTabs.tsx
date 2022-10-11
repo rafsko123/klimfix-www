@@ -1,8 +1,9 @@
-import {useState} from "react";
-import React      from "react";
-import styled     from "styled-components";
-import {DataFaq}  from "../../../data/DatFaq";
-import {TitleSm}  from "../../../components/typography/TitleSm";
+import {ReactFragment} from "react";
+import {useState}      from "react";
+import React           from "react";
+import styled          from "styled-components";
+import {DataFaq}       from "../../../data/DatFaq";
+import {TitleSm}       from "../../../components/typography/TitleSm";
 
 import ChevronDownIcon from "../../../assets/icons/chevron-down.svg";
 import ChevronUpIcon   from "../../../assets/icons/chevron-up.svg";
@@ -69,6 +70,7 @@ const FaqItemDescription = styled.div`
     font-size: 16px;
     padding-right: 60px;
     font-weight: 300;
+    line-height: 1.8;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         font-size: 14px;
         padding-right: 40px;
@@ -80,7 +82,7 @@ const FaqItemDescription = styled.div`
 
 
 const FaqTabs = () => {
-  const renderFaqItem = (title: string, description: string) => {
+  const renderFaqItem = (title: string, description: any) => {
     const [active, setActive] = useState<boolean>(false);
     const handleClick         = () => setActive(!active);
 

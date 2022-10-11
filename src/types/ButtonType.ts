@@ -5,6 +5,7 @@ export interface ButtonType {
   to?: string;
   type?: string;
   href?: string;
+  anchor?: string;
   target?: string;
   onClick?: () => void;
   disabled?: boolean;

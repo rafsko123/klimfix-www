@@ -5,13 +5,10 @@ const path = require("path");
 require("dotenv").config();
 
 const config: GatsbyConfig = {
-  siteMetadata: {
+  siteMetadata:   {
     title:   `Klimfix`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://klimfix.pl/`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins:        [
     "gatsby-plugin-styled-components",
@@ -22,6 +19,21 @@ const config: GatsbyConfig = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset:   0,
+        duration: 300,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id:                   "GTM-NS8ZMRV",
+        includeInDevelopment: false,
+        defaultDataLayer:     {platform: "gatsby"},
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name:             `Klimfix`,
@@ -30,7 +42,7 @@ const config: GatsbyConfig = {
         background_color: `#fff`,
         theme_color:      `#00C9FF`,
         display:          `standalone`,
-        icon:             `src/assets/images/icon.png`, // This path is relative to the root of the site.
+        icon:             `src/assets/images/icon.png`,
       },
     },
     {

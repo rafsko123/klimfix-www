@@ -1,3 +1,4 @@
+import {HeadFC}         from "gatsby";
 import React            from "react";
 import styled           from "styled-components";
 import SubpageContainer from "../components/layout/SubpageContainer";
@@ -38,3 +39,5 @@ const PriceListPage = () => {
 };
 
 export default PriceListPage;
+
+export const Head: HeadFC = () => <title>Klimfix | Usługi i cennik</title>;
