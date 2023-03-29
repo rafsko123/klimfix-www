@@ -18,6 +18,7 @@ const StyledWrapper = styled(Wrapper)`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 3;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         max-width: 800px;
     }
@@ -29,6 +30,21 @@ const StyledWrapper = styled(Wrapper)`
 const ImageBox = styled.div`
     width: 100%;
     height: 700px;
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-color: rgba(0, 45, 112, 0.75);
+        background-image: linear-gradient(360deg, rgba(0, 201, 255, 0.39) 0%, rgba(0, 51, 112, 0) 100%), linear-gradient(0deg, rgba(0, 45, 112, 0.25), rgba(0, 45, 112, 0.85));
+
+    }
 
     .gatsby-image-wrapper {
         height: 100%;

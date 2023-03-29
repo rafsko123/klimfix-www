@@ -26,7 +26,7 @@ export const defaultPrimaryButtonStyle = css`
     }
 
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
-        font-size: 12px;
+        font-size: 14px;
         height: 40px;
         padding: 2px 24px;
     }

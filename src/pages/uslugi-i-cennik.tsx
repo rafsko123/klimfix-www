@@ -3,6 +3,7 @@ import React            from "react";
 import styled           from "styled-components";
 import SubpageContainer from "../components/layout/SubpageContainer";
 import {Wrapper}        from "../components/layout/Wrapper";
+import Seo              from "../components/Seo";
 import {TitleMd}        from "../components/typography/TitleMd";
 import AboutIcons       from "../sections/AboutIcons";
 import ContactBaner     from "../sections/ContactBaner";
@@ -25,19 +26,21 @@ const StyledTitleMd = styled(TitleMd)`
 
 const PriceListPage = () => {
   return (
-    <SubpageContainer>
-      <StyledWrapper>
-        <StyledTitleMd as="h1">
-          Usługi i cennik
-        </StyledTitleMd>
-        <PriceList/>
-        <AboutIcons/>
-        <ContactBaner/>
-      </StyledWrapper>
-    </SubpageContainer>
+    <>
+      <Seo title="USŁUGI I CENNIK" description="Oferujemy serwis klimatyzacji samochodowej pielęgnację samochodową, auto detailing oraz car wrapping w Rzeszowie i Tyczynie."/>
+      <SubpageContainer>
+        <StyledWrapper>
+          <StyledTitleMd as="h1">
+            Usługi i cennik
+          </StyledTitleMd>
+          <PriceList/>
+          <AboutIcons/>
+          <ContactBaner/>
+        </StyledWrapper>
+      </SubpageContainer>
+    </>
   );
 };
 
 export default PriceListPage;
 
-export const Head: HeadFC = () => <title>Klimfix | Usługi i cennik</title>;

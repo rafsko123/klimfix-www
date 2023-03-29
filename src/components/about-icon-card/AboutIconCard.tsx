@@ -12,9 +12,12 @@ const Container = styled.div`
 `;
 
 const IconBox = styled.div`
-    width: 80px;
-    height: 60px;
-    margin-bottom: 24px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 13px rgba(0, 0, 0, 0.08);
+    padding: 28px;
 
     img {
         width: 100%;
@@ -24,15 +27,16 @@ const IconBox = styled.div`
     }
 
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
+        padding: 24px;
     }
 `;
 
 const StyledTitleSm = styled(TitleSm)`
     text-align: center;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
-        font-size: 12px;
+        font-size: 16px;
     }
 `;
 

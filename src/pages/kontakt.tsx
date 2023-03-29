@@ -1,7 +1,7 @@
-import {HeadFC}  from "gatsby";
 import React     from "react";
 import styled    from "styled-components";
 import {Wrapper} from "../components/layout/Wrapper";
+import Seo       from "../components/Seo";
 import {TitleLg} from "../components/typography/TitleLg";
 import {TitleSm} from "../components/typography/TitleSm";
 
@@ -168,47 +168,49 @@ const ContactBoxLink = styled.a`
 
 const Contact = () => {
   return (
-    <Container>
-      <StyledWrapper>
-        <Column>
-          <TextBox>
-            <StyledTitleSm isWhite>Masz pytania?</StyledTitleSm>
-            <TitleLg isWhite as="h1">
-              SKONTAKTUJ SIĘ <br/>
-              Z NAMI
-            </TitleLg>
-            <ContactBox>
-              <ContactBoxItem>
-                <ContactBoxIcon>
-                  <img src={PhoneIcon} alt=""/>
-                </ContactBoxIcon>
-                <ContactBoxDetail>
-                  <ContactBoxLink href="tel:+48534520569" title="Telefon kontaktowy">
-                    +48 534 520 569
-                  </ContactBoxLink><br/>
-                  <ContactBoxLink href="tel:+48531086370" title="Telefon kontaktowy">
-                    +48 531 086 370
-                  </ContactBoxLink>
-                </ContactBoxDetail>
-              </ContactBoxItem>
-              <ContactBoxItem>
-                <ContactBoxIcon>
-                  <img src={EnvelopeIcon} alt=""/>
-                </ContactBoxIcon>
-                <ContactBoxDetail>
-                  <ContactBoxLink href="mailto:kontakt@klimfix.pl" title="Adres email - klimfix">
-                    kontakt@klimfix.pl
-                  </ContactBoxLink>
-                </ContactBoxDetail>
-              </ContactBoxItem>
-            </ContactBox>
-          </TextBox>
-        </Column>
-      </StyledWrapper>
-    </Container>
+    <>
+      <Seo title="Kontakt" description="Oferujemy serwis klimatyzacji samochodowej pielęgnację samochodową, auto detailing oraz car wrapping w Rzeszowie i Tyczynie."/>
+      <Container>
+        <StyledWrapper>
+          <Column>
+            <TextBox>
+              <StyledTitleSm isWhite>Masz pytania?</StyledTitleSm>
+              <TitleLg isWhite as="h1">
+                SKONTAKTUJ SIĘ <br/>
+                Z NAMI
+              </TitleLg>
+              <ContactBox>
+                <ContactBoxItem>
+                  <ContactBoxIcon>
+                    <img src={PhoneIcon} alt=""/>
+                  </ContactBoxIcon>
+                  <ContactBoxDetail>
+                    <ContactBoxLink href="tel:+48534520569" title="Telefon kontaktowy">
+                      +48 534 520 569
+                    </ContactBoxLink><br/>
+                    <ContactBoxLink href="tel:+48531086370" title="Telefon kontaktowy">
+                      +48 531 086 370
+                    </ContactBoxLink>
+                  </ContactBoxDetail>
+                </ContactBoxItem>
+                <ContactBoxItem>
+                  <ContactBoxIcon>
+                    <img src={EnvelopeIcon} alt=""/>
+                  </ContactBoxIcon>
+                  <ContactBoxDetail>
+                    <ContactBoxLink href="mailto:kontakt@klimfix.pl" title="Adres email - klimfix">
+                      kontakt@klimfix.pl
+                    </ContactBoxLink>
+                  </ContactBoxDetail>
+                </ContactBoxItem>
+              </ContactBox>
+            </TextBox>
+          </Column>
+        </StyledWrapper>
+      </Container>
+    </>
+
   );
 };
 
 export default Contact;
-
-export const Head: HeadFC = () => <title>Klimfix | Kontakt</title>;

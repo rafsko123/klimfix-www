@@ -71,13 +71,15 @@ const About = () => {
       <StyledWrapper>
         <Column>
           <TextBox>
-            <StyledTitleSm>Nie tylko klimatyzacja!</StyledTitleSm>
-            <TitleLg>Stawiamy komfort jazdy na pierwszym miejscu!</TitleLg>
+            <StyledTitleSm as="h1">SERWIS KLIMATYZACJI RZESZÓW</StyledTitleSm>
+            <TitleLg as="h2">KLIMATYZACJA SAMOCHODOWA
+              W RZESZOWIE
+              I OKOLICACH</TitleLg>
           </TextBox>
         </Column>
         <Column>
           <Description>
-            Oferujemy serwis klimatyzacji samochodowej (potocznie nazywany “nabijaniem klimatyzacji”) oraz pielęgnację samochodową w zakresie sprzątania wnętrza auta w Rzeszowie i Tyczynie. Pracujemy na układach z czynnikiem R134a i R1234yf, sprawdzamy szczelność, ozonujemy. Profesjonalnie dbamy o czystość samochodu.
+            Oferujemy serwis klimatyzacji samochodowej (potocznie nazywany “nabijaniem klimatyzacji”), pielęgnację samochodową, auto detailing oraz car wrapping w Rzeszowie i Tyczynie. Pracujemy na układach z czynnikiem R134a i R1234yf, sprawdzamy szczelność, ozonujemy. Profesjonalnie dbamy o czystość samochodu.
           </Description>
         </Column>
       </StyledWrapper>

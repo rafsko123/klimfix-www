@@ -5,7 +5,6 @@ import {Wrapper}         from "../../../components/layout/Wrapper";
 import {TitleLg}         from "../../../components/typography/TitleLg";
 import {TitleSm}         from "../../../components/typography/TitleSm";
 import {useArticlesData} from "../../../hooks/articlesData/useArticlesData";
-
 import WatermarkBlogIcon from "../../../assets/icons/watermark_blog.svg";
 
 
@@ -47,12 +46,14 @@ const ArticlesListing = styled.div`
     z-index: 2;
 `;
 
-const ArticleCardContent = styled.div``;
-
 const ImageBox = styled(Link)`
     display: inline-block;
     width: 100%;
     position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: .3s border ease;
 `;
 
 const Mask = styled.div`
@@ -66,18 +67,18 @@ const Mask = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 26px;
     font-weight: 500;
-    background: linear-gradient(0deg, rgba(0, 201, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 51, 112, 0.57);
+    background: linear-gradient(0deg, rgba(0, 201, 255, 0.3) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 51, 112, 0.57);
     transition: .3s all ease;
     opacity: 0;
     text-transform: uppercase;
 
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
-        font-size: 40px;
+        font-size: 20px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
-        font-size: 30px;
+        font-size: 18px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
         display: none;
@@ -88,74 +89,62 @@ const ArticleCardTitle = styled(Link)`
     display: inline-block;
     color: #fff;
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.5;
     font-weight: 500;
-    margin-top: 18px;
+    margin-top: 16px;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
-        margin-top: 18px;
-        font-size: 18px;
+        margin-top: 14px;
+        font-size: 14px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
-        font-size: 16px;
         margin-top: 12px;
     }
 `;
 
 const ArticleCard = styled.div`
-    display: flex;
-    width: calc(50% - 50px);
+    width: calc(33.33% - 36px);
     margin-bottom: 80px;
 
     &:hover {
+        ${ImageBox} {
+            border-color: rgba(0, 201, 255, 1);
+        }
 
         ${Mask} {
             opacity: 1;
         }
     }
 
-    &:not(:nth-child(2n)) {
-        margin-right: 100px;
+    &:not(:nth-child(3n)) {
+        margin-right: 54px;
     }
 
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
-        width: calc(50% - 30px);
+        width: calc(33.33% - 24px);
         margin-bottom: 60px;
 
-        &:not(:nth-child(2n)) {
-            margin-right: 60px;
+        &:not(:nth-child(3n)) {
+            margin-right: 36px;
         }
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
-        width: calc(50% - 20px);
+        width: calc(50% - 16px);
         margin-bottom: 40px;
 
+        &:not(:nth-child(3n)) {
+            margin-right: 0;
+        }
+
         &:not(:nth-child(2n)) {
-            margin-right: 40px;
+            margin-right: 32px;
         }
     }
 
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
         width: 100%;
         margin-right: 0 !important;
         margin-bottom: 36px;
-    }
-`;
-
-const ArticleNumber = styled.div`
-    color: #fff;
-    font-size: 50px;
-    line-height: 1;
-    padding: 0 40px 0 0;
-    font-weight: 300;
-    transform: translateY(-10px);
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
-        font-size: 40px;
-        transform: translateY(-4px);
-
-    }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
-        display: none;
     }
 `;
 
@@ -183,18 +172,15 @@ const ArticlesList = () => {
         </TextBox>
         <ArticlesListing>
           {
-            data.map((element, i) => (
-              <ArticleCard>
-                <ArticleNumber>{`0${i + 1}`}</ArticleNumber>
-                <ArticleCardContent>
-                  <ImageBox to={`/strefa-wiedzy/${element.slug}`}>
-                    {element.list}
-                    <Mask>Czytaj</Mask>
-                  </ImageBox>
-                  <ArticleCardTitle to={`/strefa-wiedzy/${element.slug}`}>
-                    {element.title}
-                  </ArticleCardTitle>
-                </ArticleCardContent>
+            data.map((element, index) => (
+              <ArticleCard key={index}>
+                <ImageBox to={element.slug}>
+                  {element.list}
+                  <Mask>Czytaj</Mask>
+                </ImageBox>
+                <ArticleCardTitle to={element.slug} title={element.title}>
+                  {element.title}
+                </ArticleCardTitle>
               </ArticleCard>
             ))
           }

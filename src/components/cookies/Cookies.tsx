@@ -138,6 +138,9 @@ export const Text = styled.p`
         font-size: 12px;
         padding-right: 0;
     }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        font-size: 14px;
+    }
 `;
 
 const CookiesBox = () => {

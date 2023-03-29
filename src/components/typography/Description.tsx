@@ -21,6 +21,6 @@ export const Description = styled.p<{ isWhite?: boolean }>`
         font-size: 14px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
-        font-size: 12px;
+        font-size: 14px;
     }
 `;

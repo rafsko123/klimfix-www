@@ -24,6 +24,7 @@ const AboutIconWrapper = styled.div`
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
         flex-direction: column;
+        width: 220px;
         &:not(:last-child) {
             margin-bottom: 36px;
         }

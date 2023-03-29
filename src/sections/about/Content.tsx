@@ -55,7 +55,7 @@ export const image = () => {
     query {
       about: file(relativePath: { eq: "images/about/about.png" }) {
         childImageSharp {
-          fluid(maxWidth: 1200, quality: 100) {
+          fluid(maxWidth: 1920, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

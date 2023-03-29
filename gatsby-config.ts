@@ -74,6 +74,13 @@ const config: GatsbyConfig = {
         sections:   path.join(__dirname, "src/sections"),
       },
     },
+    {
+      resolve: "gatsby-plugin-htaccess",
+      options: {
+        https: true,
+        www:   false,
+      },
+    },
   ],
 };
 

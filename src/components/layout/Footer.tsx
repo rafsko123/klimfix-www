@@ -220,6 +220,7 @@ const CopyRights = styled.div`
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
         margin: 4px 0 4px 0;
+        font-size: 14px;
     }
 `;
 
@@ -240,6 +241,9 @@ const StyledLink = styled(Link)`
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         font-size: 12px;
     }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        font-size: 14px;
+    }
 
     &:hover {
         text-decoration: underline !important;
@@ -259,6 +263,9 @@ const Realization = styled(Link)`
 
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
         font-size: 12px;
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        font-size: 14px;
     }
 `;
 

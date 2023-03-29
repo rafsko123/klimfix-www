@@ -1,7 +1,7 @@
-import {HeadFC}     from "gatsby";
 import React        from "react";
 import styled       from "styled-components";
 import {Wrapper}    from "../components/layout/Wrapper";
+import Seo          from "../components/Seo";
 import ContactBaner from "../sections/about/ContactBaner";
 import Content      from "../sections/about/Content";
 import Hero         from "../sections/about/Hero";
@@ -71,16 +71,19 @@ const StyledWrapper = styled(Wrapper)`
 
 const About = () => {
   return (
-    <Container>
-      <StyledWrapper>
-        <Hero/>
+    <>
+      <Seo title="O nas" description="Jesteśmy polską firmą motoryzacyjną działającą na terenie Podkarpacia. Nasza siedziba znajduje się w Rzeszowie."/>
+      <Container>
+        <StyledWrapper>
+          <Hero/>
+        </StyledWrapper>
         <Content/>
-        <ContactBaner/>
-      </StyledWrapper>
-    </Container>
+        <StyledWrapper>
+          <ContactBaner/>
+        </StyledWrapper>
+      </Container>
+    </>
   );
 };
 
 export default About;
-
-export const Head: HeadFC = () => <title>Klimfix | O nas</title>;

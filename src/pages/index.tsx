@@ -1,26 +1,27 @@
 import * as React    from "react";
 import type {HeadFC} from "gatsby";
+import Seo           from "../components/Seo";
 import AboutIcons    from "../sections/AboutIcons";
 import About         from "../sections/homepage/About";
 import Contact       from "../sections/homepage/Contact";
 import HeroSlider    from "../sections/homepage/HeroSlider";
-import Services      from "../sections/homepage/Services";
+import ServicesNew   from "../sections/homepage/ServicesNew";
 import Socials       from "../sections/homepage/Socials";
 
 
 const IndexPage = () => {
   return (
     <>
+      <Seo title="Strona główna" description="Oferujemy serwis klimatyzacji samochodowej pielęgnację samochodową, auto detailing oraz car wrapping w Rzeszowie i Tyczynie."/>
       <HeroSlider/>
       <About/>
-      <Services/>
+      <ServicesNew/>
       <AboutIcons/>
       <Contact/>
-      <Socials />
+      <Socials/>
     </>
   );
 };
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Klimfix | Strona główna</title>;

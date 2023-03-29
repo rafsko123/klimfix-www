@@ -133,3 +133,20 @@ const ServicesCard: FunctionComponent<Props> = ({element}) => {
 };
 
 export default ServicesCard;
+
+
+// <Container>
+//   <BackgroundImage>
+//     {element.image}
+//   </BackgroundImage>
+//   <Wrapper>
+//     <IconBox>
+//       <img src={element.icon} alt=""/>
+//     </IconBox>
+//     <StyledTitleMd>{element.title}</StyledTitleMd>
+//     <StyledDescription>
+//       {element.description}
+//     </StyledDescription>
+//     <ButtonPrimary anchor={element.slug}>{element.buttonText}</ButtonPrimary>
+//   </Wrapper>
+// </Container>

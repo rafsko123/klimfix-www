@@ -177,6 +177,7 @@ const ServiceDescription = styled.div`
     margin-top: 4px;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
         margin-top: 8px;
+        font-size: 14px;
     }
 `;
 
@@ -207,6 +208,9 @@ const PriceListDescription = styled.div`
     line-height: 1.8;
     font-family: 'Poppins', sans-serif;
     color: #152D6D;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        font-size: 14px;
+    }
 `;
 
 

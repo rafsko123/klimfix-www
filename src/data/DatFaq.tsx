@@ -8,7 +8,7 @@ export const DataFaq = [
   },
   {
     title:       "Jak długo trwa usługa?",
-    description: <>Usługa serwisowa klimatyzacji trwa 1 godzinę. Pakiet sprzątania wnętrza auta to 30-90 min pracy w&nbsp;zależności od stopnia zabrudzenia. Czas prania tapicerki lub czyszczenia skór jest zróżnicowany, może to zająć od godziny do 5 godzin. Polerowanie lamp trwa ok. 4 godziny.</>,
+    description: <>Usługa serwisowa klimatyzacji, podobnie jak cały pakiet sprzątania, trwają ok.&nbsp;1&nbsp;godz. Ozonowanie zajmuje&nbsp;20-30 min. </>,
   },
   {
     title:       "Co mogę robić w trakcie trwania usługi?",
@@ -19,3 +19,4 @@ export const DataFaq = [
     description: <>W tym momencie nasz warsztat jeszcze nie jest otwarty. W&nbsp;razie wykrycia usterki, skierujemy Cię do odpowiednich specjalistów, z&nbsp;którymi współpracujemy.</>,
   },
 ];
+

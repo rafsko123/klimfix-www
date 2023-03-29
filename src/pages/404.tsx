@@ -1,33 +1,8 @@
-import * as React     from "react";
-import {Link, HeadFC} from "gatsby";
-import styled         from "styled-components";
-import ButtonPrimary  from "../components/buttons/ButtonPrimary";
-import {TitleLg}      from "../components/typography/TitleLg";
-import {TitleMd}      from "../components/typography/TitleMd";
-import {TitleSm}      from "../components/typography/TitleSm";
+import * as React    from "react";
+import {HeadFC}      from "gatsby";
+import styled        from "styled-components";
+import ButtonPrimary from "../components/buttons/ButtonPrimary";
 
-
-const pageStyles    = {
-  color:      "#232129",
-  padding:    "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop:    0,
-  marginBottom: 64,
-  maxWidth:     320,
-};
-
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles      = {
-  color:           "#8A6534",
-  padding:         4,
-  backgroundColor: "#FFF4DB",
-  fontSize:        "1.25rem",
-  borderRadius:    4,
-};
 
 const Container = styled.div`
     min-height: 100vh;

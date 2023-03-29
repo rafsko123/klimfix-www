@@ -1,40 +1,42 @@
-import React              from "react";
-import Img                from "gatsby-image";
-import {useServicesPhoto} from "./useServicesPhoto";
+import React from "react";
 
 import SnowflakeIcon from "../../assets/icons/snowflake.svg";
 import VacuumImage   from "../../assets/icons/vacuum.svg";
+import ToolsIcon     from "../../assets/icons/tools.svg";
 
 
 const useServicesData = () => {
-  const image = useServicesPhoto();
-
   return [
     {
-      title:       <>SERWIS<br/>KLIMATYZACJI</>,
-      description: "Napełniamy układ zarówno starym czynnikiem (R134a) jak i nowym (R1234yf). W pakiecie oferujemy sprawdzenie szczelności oraz ozonowanie!",
+      title:       "SERWIS KLIMATYZACJI",
+      description: <>Napełniamy układ zarówno starym czynnikiem (R134a) jak&nbsp;i&nbsp;nowym (R1234yf). W&nbsp;pakiecie otrzymasz sprawdzenie szczelności oraz ozonowanie.</>,
       icon:        SnowflakeIcon,
-      image:       <Img fluid={image.service_image_1.childImageSharp.fluid}/>,
       slug:        "/uslugi-i-cennik#serwis-klimatyzacji",
       buttonText:  "Sprawdź cennik",
     },
     {
-      title:       <>SPRZĄTANIE<br/>WNĘTRZA AUTA</>,
-      description: "Odświeżymy wnętrze Twojego auta. W usługach oferujemy m.in. odkurzanie, pranie tapicerki i czyszczenie skór. Czyste wnętrze to komfort jazdy!",
+      title:       "PIELĘGNACJA SAMOCHODOWA",
+      description: <>Odświeżymy wnętrze Twojego auta. W&nbsp;usługach oferujemy m.in. odkurzanie, pranie tapicerki i&nbsp;czyszczenie skór. Czyste wnętrze to komfort jazdy!</>,
       icon:        VacuumImage,
-      image:       <Img fluid={image.service_image_2.childImageSharp.fluid}/>,
       slug:        "/uslugi-i-cennik#pielegnacja-samochodowa",
       buttonText:  "Sprawdź cennik",
     },
-    // {
-    //   title:       <>SPRZĄTANIE<br/>WNĘTRZA AUTA</>,
-    //   description: "Odświeżymy wnętrze Twojego auta. W usługach oferujemy m.in. odkurzanie, pranie tapicerki i czyszczenie skór. Czyste wnętrze to komfort jazdy!",
-    //   icon:        VacuumImage,
-    //   image:       <Img fluid={image.service_image_2.childImageSharp.fluid}/>,
-    //   slug:        "/uslugi-i-cennik",
-    //   buttonText:  "Sprawdź cennik",
-    // },
+    {
+      title:       "AUTO DETAILING",
+      description: <>Usuniemy zarysowania i&nbsp;wydobędziemy blask z lakieru. Oferujemy również renowację zamglonych reflektorów oraz&nbsp;czyszczenie i&nbsp;zabezpieczenie skór.</>,
+      icon:        ToolsIcon,
+      slug:        "/uslugi-i-cennik#auto-detaling",
+      buttonText:  "Sprawdź cennik",
+    },
+    {
+      title:       "WRAPPING",
+      description: <>Unikalny wygląd auta i&nbsp;ochrona przed uszkodzenia -&nbsp;okleimy Twój pojazd wysokiej jakości folią, by jak najdłużej wyglądał jakby dopiero wyjechał z salonu</>,
+      icon:        SnowflakeIcon,
+      slug:        "/uslugi-i-cennik#wrapping",
+      buttonText:  "Sprawdź cennik",
+    },
   ];
 };
 
+// @ts-ignore
 export {useServicesData};

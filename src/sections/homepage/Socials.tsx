@@ -213,6 +213,9 @@ const SocialButton = styled.a`
             margin-bottom: 10px;
         }
     }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        font-size: 14px;
+    }
 `;
 
 const Socials = () => {

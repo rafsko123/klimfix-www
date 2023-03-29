@@ -105,6 +105,9 @@ const Line = styled.div`
     color: ${({theme}) => theme.colors.secondary};
     font-size: 12px;
     font-weight: 400;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+      font-size: 14px;
+    }
 `;
 
 const BoldedLine = styled(Line)`
@@ -124,7 +127,7 @@ const LineDescription = styled(Line)`
         margin: 6px 0 12px 0;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
-        font-size: 12px;
+        font-size: 14px;
         margin: 4px 0 12px 0;
     }
 `;
