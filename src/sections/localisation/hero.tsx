@@ -16,8 +16,8 @@ const StyledTitleSm = styled(TitleSm)`
 const Hero = () => {
   return (
     <div>
-      <StyledTitleSm>Nie tylko klimatyzacja!</StyledTitleSm>
-      <TitleLg as="h1">
+      <StyledTitleSm as="h1">Nie tylko klimatyzacja!</StyledTitleSm>
+      <TitleLg as="h2">
         SPRAWDŹ, <br/>
         GDZIE JESTEŚMY
       </TitleLg>

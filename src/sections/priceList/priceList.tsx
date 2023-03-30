@@ -2,6 +2,8 @@ import React           from "react";
 import styled          from "styled-components";
 import {TitleSm}       from "../../components/typography/TitleSm";
 import {DataPriceList} from "../../data/DataPriceList";
+import SkewLeft        from "../../assets/icons/skew-left-small.svg";
+import SkewRight       from "../../assets/icons/skew-right-small.svg";
 
 
 const Container = styled.div`
@@ -147,7 +149,12 @@ const PriceListContentItem = styled.div`
     padding-bottom: 24px;
     border-bottom: 1px solid #C6C6C5;
     position: relative;
-
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
 `;
 
 const ServiceBox = styled.div`
@@ -175,6 +182,12 @@ const ServiceTitle = styled.div<{ bolded: boolean }>`
 const ServiceDescription = styled.div`
     font-size: 12px;
     margin-top: 4px;
+    color: #152D6D;
+
+    b {
+        font-weight: 600;
+    }
+
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
         margin-top: 8px;
         font-size: 14px;
@@ -182,7 +195,7 @@ const ServiceDescription = styled.div`
 `;
 
 const ServicePrice = styled.div`
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     white-space: nowrap;
@@ -192,10 +205,36 @@ const ServicePrice = styled.div`
         font-size: 18px;
     }
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
-        position: absolute;
-        top: 0;
-        right: 0;
+        margin-top: 18px;
         font-size: 16px;
+    }
+`;
+
+const ProductListCategory = styled.div`
+    &:not(:last-child) {
+        margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        &:not(:last-child) {
+            margin-bottom: 36px;
+        }
+    }
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+    }
+`;
+
+const PriceListCategoryTitle = styled.h3`
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #00C9FF;
+    margin-bottom: 48px;
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+        margin-bottom: 36px;
     }
 `;
 
@@ -208,6 +247,75 @@ const PriceListDescription = styled.div`
     line-height: 1.8;
     font-family: 'Poppins', sans-serif;
     color: #152D6D;
+
+    ul {
+        li {
+            position: relative;
+            padding-left: 10px;
+
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+
+            &:before {
+                content: ""; /* FontAwesome Unicode */
+                display: inline-block;
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background-color: #152D6D;
+                position: absolute;
+                left: 0;
+                top: 9px;
+            }
+        }
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+        font-size: 14px;
+    }
+`;
+
+const Baner = styled.div`
+    max-width: 940px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #00C9FF;
+    background: rgba(0, 51, 112, 0.06);
+    padding: 24px 32px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    color: #003370;
+    border-radius: 10px;
+    position: relative;
+
+    &:after, &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 42px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    &:before {
+        bottom: -2px;
+        left: -2px;
+        background-image: url(${SkewLeft});
+        background-position: bottom left;
+    }
+
+    &:after {
+        top: -2px;
+        right: -2px;
+        background-image: url(${SkewRight});
+        background-position: right top;
+    }
+
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
         font-size: 14px;
     }
@@ -236,24 +344,38 @@ const PriceList = () => {
             <PriceListContent>
               {
                 element.content.map((item, i) => (
-                  <PriceListContentItem key={`service_${i}`}>
-                    <ServiceBox>
-                      <ServiceTitle bolded={item.bolded}>{item.title}</ServiceTitle>
-                      {
-                        item.description && <ServiceDescription>{item.description}</ServiceDescription>
-                      }
-                    </ServiceBox>
-                    <ServicePrice>{item.price}</ServicePrice>
-                  </PriceListContentItem>
+                  <ProductListCategory key={`service_${i}`}>
+                    {item.title && <PriceListCategoryTitle>{item.title}</PriceListCategoryTitle>}
+                    {
+                      item.list.map((list, index) => (
+                        <PriceListContentItem key={`list_${index}`}>
+                          <ServiceBox>
+                            <ServiceTitle bolded={list.bolded}>{list.title}</ServiceTitle>
+                            {
+                              list.description && <ServiceDescription>{list.description}</ServiceDescription>
+                            }
+                          </ServiceBox>
+                          <ServicePrice>{list.price}</ServicePrice>
+                        </PriceListContentItem>
+                      ))
+                    }
+                    {item.description && (
+                      <PriceListDescription>
+                        {item.description}
+                      </PriceListDescription>
+                    )}
+                  </ProductListCategory>
                 ))
               }
             </PriceListContent>
-            <PriceListDescription>
-              {element.description}
-            </PriceListDescription>
           </PriceListItem>
         ))
       }
+
+      <Baner>
+        Podane ceny sa cenami netto, jednak u nas VAT wynosi 0%, więc netto=brutto.
+      </Baner>
+
     </Container>
   );
 };

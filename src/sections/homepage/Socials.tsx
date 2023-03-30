@@ -230,11 +230,11 @@ const Socials = () => {
             motoryzacyjnego humoru.
           </StyledDescription>
           <SocialsButtons>
-            <SocialButton href={DataSocials.facebook} rel="noopener" target="_blank" className="facebook-link">
+            <SocialButton href={DataSocials.facebook} title="Facebook KLIMFIX" rel="noopener" target="_blank" className="facebook-link">
               <img src={FBIcon} alt=""/>
               Polub na Facebook’u!
             </SocialButton>
-            <SocialButton href={DataSocials.instagram} rel="noopener" target="_blank" className="instagram-link">
+            <SocialButton href={DataSocials.instagram} title="Instagram KLIMFIX" rel="noopener" target="_blank" className="instagram-link">
               <img src={IGIcon} alt=""/>
               Zaobserwuj na IG!
             </SocialButton>

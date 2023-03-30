@@ -262,7 +262,7 @@ const HeroSlider = () => {
                     {slide.title}
                   </TitleXl>
                   <ButtonWrapper>
-                    <ButtonPrimary href={`tel:${slide.ctaUrl}`}>{slide.ctaText}</ButtonPrimary>
+                    <ButtonPrimary href={`tel:${slide.ctaUrl}`} title="Zadzwoń do KLIMFIX">{slide.ctaText}</ButtonPrimary>
                   </ButtonWrapper>
                 </SlideTextBox>
               </StyledWrapper>

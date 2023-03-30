@@ -165,8 +165,8 @@ const ArticlesList = () => {
     <Container>
       <StyledWrapper>
         <TextBox>
-          <TitleSm isWhite>Blog</TitleSm>
-          <TitleLg as="h2" isWhite>
+          <TitleSm isWhite as="h2">Blog</TitleSm>
+          <TitleLg as="h3" isWhite>
             solidna dawka wiedzy <br/>w artykułach
           </TitleLg>
         </TextBox>
@@ -174,7 +174,7 @@ const ArticlesList = () => {
           {
             data.map((element, index) => (
               <ArticleCard key={index}>
-                <ImageBox to={element.slug}>
+                <ImageBox to={element.slug} title={element.title}>
                   {element.list}
                   <Mask>Czytaj</Mask>
                 </ImageBox>

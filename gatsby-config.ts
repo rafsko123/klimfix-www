@@ -21,7 +21,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
-        offset:   0,
+        offset:   -100,
         duration: 300,
       },
     },

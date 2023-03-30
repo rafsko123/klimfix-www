@@ -57,8 +57,8 @@ const Hero = () => {
     <StyledWrapper>
       <Column>
         <TextBox>
-          <StyledTitleSm>FAQ</StyledTitleSm>
-          <TitleLg>
+          <StyledTitleSm as="h1">FAQ</StyledTitleSm>
+          <TitleLg as="h2">
             KRÓTKIE PYTANIA, <br/>
             KRÓTKIE ODPOWIEDZI
           </TitleLg>

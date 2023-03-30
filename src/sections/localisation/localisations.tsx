@@ -12,6 +12,7 @@ const LocalisationItem = styled.div`
     width: 100%;
     height: 340px;
     display: flex;
+    position: relative;
 
     &:not(:last-child) {
         margin-bottom: 34px;
@@ -106,7 +107,7 @@ const Line = styled.div`
     font-size: 12px;
     font-weight: 400;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
-      font-size: 14px;
+        font-size: 14px;
     }
 `;
 
@@ -167,6 +168,26 @@ const ImageBox = styled.div`
     }
 `;
 
+const Mask = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: grayscale(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #003370;
+`;
+
 const Localisations = () => {
   const data = useLocalisationData();
 
@@ -175,6 +196,9 @@ const Localisations = () => {
       {
         data.map((element, i) => (
           <LocalisationItem key={i}>
+            {element.open === false && (
+              <Mask>otwarcie wkrótce</Mask>
+            )}
             <AddressBox>
               <IconBox>
                 <img src={PinBigIcon} alt=""/>

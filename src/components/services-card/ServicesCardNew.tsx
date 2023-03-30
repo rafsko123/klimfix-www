@@ -164,7 +164,8 @@ const ServicesCardNew: FunctionComponent<Props> = ({element}) => {
           <StyledDescription>
             {element.description}
           </StyledDescription>
-          <ButtonPrimary anchor={element.slug}>{element.buttonText}</ButtonPrimary>
+          {/*@ts-ignore*/}
+          <ButtonPrimary anchor={element.slug} title={element.title}>{element.buttonText}</ButtonPrimary>
         </TextBox>
       </Wrapper>
     </Card>

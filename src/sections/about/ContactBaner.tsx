@@ -23,7 +23,7 @@ const ContactBaner = () => {
       <StyledDescription isWhite>
         Jesteśmy otwarci na propozycje współpracy. <br/>Napisz do nas lub zadzwoń!
       </StyledDescription>
-      <ButtonPrimary to="/kontakt">
+      <ButtonPrimary to="/kontakt" title="Skontaktuj się z KLIMFIX">
         SKONTAKTUJ SIĘ Z NAMI
       </ButtonPrimary>
     </Container>

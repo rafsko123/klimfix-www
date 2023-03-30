@@ -128,7 +128,7 @@ const Contact = () => {
         <TextBox>
           <StyledTitleSm>Chcemy być blisko Ciebie!</StyledTitleSm>
           <StyledTitleLg>SPRAWDŹ, GDZIE JESTEŚMY</StyledTitleLg>
-          <ButtonPrimary to={"/nasze-lokalizacje"}>Nasze lokalizacje</ButtonPrimary>
+          <ButtonPrimary to={"/nasze-lokalizacje"} title="Nasze lokalizacje">Nasze lokalizacje</ButtonPrimary>
         </TextBox>
       </StyledWrapper>
     </StyledSection>

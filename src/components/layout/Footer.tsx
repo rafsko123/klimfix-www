@@ -135,7 +135,13 @@ const ListLine = styled.div`
 
     &.custom-line {
         .custom-box {
+            display: block;
             margin-bottom: 6px;
+            transition: .3s color ease;
+
+            &:hover {
+                color: #00C9FF;
+            }
         }
     }
 
@@ -153,9 +159,10 @@ const ListLink = styled.a`
     line-height: 1.6;
     font-weight: 300;
     margin-bottom: 4px;
+    transition: .3s color ease;
 
     &:hover {
-        text-decoration: underline !important;
+        color: #00C9FF;
     }
 
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
@@ -273,7 +280,7 @@ const Footer = () => {
   return (
     <Container>
       <StyledWrapper>
-        <StyledTitleSm isWhite>ZADBAJ O SWÓJ KOMFORT JAZDY!</StyledTitleSm>
+        <StyledTitleSm isWhite as="h3">ZADBAJ O SWÓJ KOMFORT JAZDY!</StyledTitleSm>
         <ColumnWrapper>
           <Column>
             <ListItem>
@@ -283,8 +290,8 @@ const Footer = () => {
                   <img src={PhoneIcon} alt=""/>
                 </ListIcon>
                 <ListLine>
-                  <ListLink href="tel:+48534520569" title="">+48 534 520 569</ListLink><br/>
-                  <ListLink href="tel:+48531086370" title="">+48 531 086 370</ListLink>
+                  <ListLink href="tel:+48534520569" title="Telefon kontaktowy KLIMFIX">+48 534 520 569</ListLink><br/>
+                  <ListLink href="tel:+48531086370" title="Telefon kontaktowy KLIMFIX">+48 531 086 370</ListLink>
                 </ListLine>
               </ListContent>
               <br/>
@@ -293,7 +300,7 @@ const Footer = () => {
                   <img src={EnvelopeIcon} alt=""/>
                 </ListIcon>
                 <ListLine>
-                  <ListLink href="mailto:kontakt@klimfix.pl" title="">kontakt@klimfix.pl</ListLink><br/>
+                  <ListLink href="mailto:kontakt@klimfix.pl" title="Kontaktowy adres email">kontakt@klimfix.pl</ListLink><br/>
                 </ListLine>
               </ListContent>
             </ListItem>
@@ -304,18 +311,18 @@ const Footer = () => {
                   <img src={PinIcon} alt=""/>
                 </ListIcon>
                 <ListLine className="custom-line">
-                  <div className="custom-box">
+                  <a href="https://goo.gl/maps/TKQu14gUWnQQ5kdj8" target="_blank" rel="noopener" className="custom-box">
                     <ListSpan><b>Rzeszów</b> Krakowska 20,</ListSpan><br/>
                     <ListSpan>35-111 Rzeszów</ListSpan>
-                  </div>
-                  <div className="custom-box">
+                  </a>
+                  <a href="https://goo.gl/maps/QkxjwD9eEyM9W5Fk7" target="_blank" rel="noopener" className="custom-box">
                     <ListSpan><b>Rzeszów</b> Podwisłocze 30,</ListSpan><br/>
                     <ListSpan>35-309 Rzeszów</ListSpan>
-                  </div>
-                  <div className="custom-box">
+                  </a>
+                  <a href="https://goo.gl/maps/JhPMmZWxrhouc63D6" target="_blank" rel="noopener" className="custom-box">
                     <ListSpan><b>Tyczyn</b> Orkana 1</ListSpan><br/>
                     <ListSpan>36-020 Tyczyn</ListSpan>
-                  </div>
+                  </a>
                 </ListLine>
               </ListContent>
             </ListItem>
@@ -348,7 +355,7 @@ const Footer = () => {
         <FooterBottom>
           <FooterBox>
             <CopyRights>Klimfix {new Date().getFullYear()}</CopyRights>
-            <StyledLink to={"/polityka-prywatnosci"}>Polityka Prywatności</StyledLink>
+            <StyledLink to={"/polityka-prywatnosci"} title="Polityka prywatności KLIMFIX">Polityka Prywatności</StyledLink>
           </FooterBox>
           <div>
             <Realization to={DataSocials.designer}>

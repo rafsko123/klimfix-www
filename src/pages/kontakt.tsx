@@ -174,8 +174,8 @@ const Contact = () => {
         <StyledWrapper>
           <Column>
             <TextBox>
-              <StyledTitleSm isWhite>Masz pytania?</StyledTitleSm>
-              <TitleLg isWhite as="h1">
+              <StyledTitleSm isWhite as="h1">Masz pytania?</StyledTitleSm>
+              <TitleLg isWhite as="h2">
                 SKONTAKTUJ SIĘ <br/>
                 Z NAMI
               </TitleLg>

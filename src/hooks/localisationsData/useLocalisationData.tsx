@@ -15,6 +15,7 @@ const useLocalisationData = () => {
       description: "Pod Galerią Nowy Świat",
       days:        "pon-sob",
       hours:       "9:00 - 18:00",
+      closed:      true,
     },
     {
       image:       <Img fluid={image.localisation_2.childImageSharp.fluid}/>,
@@ -24,6 +25,7 @@ const useLocalisationData = () => {
       description: "Przy sklepie Delikatesy Centrum",
       days:        "pon-sob",
       hours:       "9:00 - 18:00",
+      open:        false,
     },
     {
       image:       <Img fluid={image.localisation_3.childImageSharp.fluid}/>,
@@ -33,6 +35,7 @@ const useLocalisationData = () => {
       description: "Przy sklepie Unimet",
       days:        "pon-sob",
       hours:       "9:00 - 18:00",
+      open:        false,
     },
   ];
 };

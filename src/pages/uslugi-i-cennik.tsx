@@ -9,7 +9,6 @@ import AboutIcons       from "../sections/AboutIcons";
 import ContactBaner     from "../sections/ContactBaner";
 import PriceList        from "../sections/priceList/priceList";
 
-
 const StyledWrapper = styled(Wrapper)`
     max-width: 1200px;
     @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {

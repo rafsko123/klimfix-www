@@ -63,13 +63,11 @@ const Wrapper = styled.div`
 const LogoBox = styled(Link)`
     display: inline-flex;
     align-items: center;
-    width: 120px;
 
     img {
-        width: 100%;
-        height: auto;
+        width: 120px;
+        height: 30px;
     }
-}
 `;
 
 const NavbarMenuBox = styled.div`
@@ -293,7 +291,7 @@ const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
   }, []);
 
   useEffect(() => {
-    if (path === "/uslugi-i-cennik/" || path === "/nasze-lokalizacje/" || path === "/strefa-wiedzy/" || path === "/polityka-prywatnosci/" ) {
+    if (path === "/uslugi-i-cennik/" || path === "/nasze-lokalizacje/" || path === "/strefa-wiedzy/" || path === "/polityka-prywatnosci/") {
       setWhiteBackground(true);
     } else {
       setWhiteBackground(false);
@@ -340,10 +338,10 @@ const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
               ))
             }
           </NavbarList>
-          <NavbarCTA href="tel:+48534520569">Zadzwoń</NavbarCTA>
+          <NavbarCTA href="tel:+48534520569" title="Telefon kontaktowy">Zadzwoń</NavbarCTA>
         </NavbarMenuBox>
         <NavbarShowOnMobile>
-          <NavbarMobileCTA href="tel:+48534520569"/>
+          <NavbarMobileCTA href="tel:+48534520569" title="Telefon kontaktowy"/>
           <Hamburger className={cx} onClick={() => handleClick()}>
             <span/>
             <span/>

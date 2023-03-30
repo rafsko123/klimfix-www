@@ -12,4 +12,5 @@ export interface ButtonType {
   onPress?: () => void;
   state?: any;
   children: ReactNode
+  title?: string;
 }

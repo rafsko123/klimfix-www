@@ -20,7 +20,7 @@ const ContactBaner = () => {
       <StyledTitleMd>
         Stawiamy komfort jazdy na <br/>pierwszym miejscu!
       </StyledTitleMd>
-      <ButtonPrimary href="tel:+48534520569">Zadzwoń</ButtonPrimary>
+      <ButtonPrimary href="tel:+48534520569" title="Telefon kontaktowy do KLIMFIX">Zadzwoń</ButtonPrimary>
     </Container>
   );
 };

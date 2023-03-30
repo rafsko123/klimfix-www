@@ -8,7 +8,6 @@ import Hero             from "../sections/localisation/hero";
 import Localisations    from "../sections/localisation/localisations";
 
 
-
 const LocalisationsPage = () => {
   return (
     <>

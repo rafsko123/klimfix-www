@@ -25,14 +25,14 @@ const useServicesData = () => {
       title:       "AUTO DETAILING",
       description: <>Usuniemy zarysowania i&nbsp;wydobędziemy blask z lakieru. Oferujemy również renowację zamglonych reflektorów oraz&nbsp;czyszczenie i&nbsp;zabezpieczenie skór.</>,
       icon:        ToolsIcon,
-      slug:        "/uslugi-i-cennik#auto-detaling",
+      slug:        "/uslugi-i-cennik#auto-detailng",
       buttonText:  "Sprawdź cennik",
     },
     {
       title:       "WRAPPING",
       description: <>Unikalny wygląd auta i&nbsp;ochrona przed uszkodzenia -&nbsp;okleimy Twój pojazd wysokiej jakości folią, by jak najdłużej wyglądał jakby dopiero wyjechał z salonu</>,
       icon:        SnowflakeIcon,
-      slug:        "/uslugi-i-cennik#wrapping",
+      slug:        "/uslugi-i-cennik#wraping",
       buttonText:  "Sprawdź cennik",
     },
   ];
