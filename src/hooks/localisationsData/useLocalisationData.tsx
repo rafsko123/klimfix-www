@@ -25,7 +25,7 @@ const useLocalisationData = () => {
       description: "Przy sklepie Delikatesy Centrum",
       days:        "pon-sob",
       hours:       "9:00 - 18:00",
-      open:        false,
+      open:        true,
     },
     {
       image:       <Img fluid={image.localisation_3.childImageSharp.fluid}/>,
@@ -35,7 +35,7 @@ const useLocalisationData = () => {
       description: "Przy sklepie Unimet",
       days:        "pon-sob",
       hours:       "9:00 - 18:00",
-      open:        false,
+      open:        true,
     },
   ];
 };
