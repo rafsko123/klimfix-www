@@ -39,6 +39,15 @@ export const useLocalisationImage = () => {
           }
         }
       }
+      localisation_5: file(
+        relativePath: { eq: "images/localisations/localisation-5.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 500, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 };

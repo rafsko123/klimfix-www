@@ -50,6 +50,17 @@ const useLocalisationData = () => {
       hours: "9:00 - 18:00",
       open: true,
     },
+    {
+      image: <Img fluid={image.localisation_5.childImageSharp.fluid} />,
+      iframe:
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10252.048291874971!2d22.0692107!3d50.0298696!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cf1858407e787%3A0x9cd93f89f16e72b2!2sKlimfix%20Auto%20Detailing%20%26%20Wrapping!5e0!3m2!1spl!2spl!4v1686085976889!5m2!1spl!2spl",
+      city: "Rzeszów",
+      street: "ul.  Pasterczyka 1a",
+      description: "Warsztat",
+      days: "pon-sob",
+      hours: "9:00 - 20:00",
+      open: true,
+    },
   ];
 };
 
