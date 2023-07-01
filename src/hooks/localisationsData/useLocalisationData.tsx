@@ -42,7 +42,7 @@ const useLocalisationData = () => {
     {
       image: <Img fluid={image.localisation_4.childImageSharp.fluid} />,
       iframe:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1279.939472613582!2d22.23133245239127!3d50.088553296332144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cee9753f749c5%3A0x995820133fa429e!2sPodzwierzyniec%2074%2C%2037-100%20%C5%81a%C5%84cut!5e0!3m2!1spl!2spl!4v1686081661927!5m2!1spl!2spl",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2559.878945031253!2d22.2300679!3d50.0885533!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cefca290381ff%3A0x312c6794c486b5dd!2sKlimFix%20Serwis%20klimatyzacji%20samochodowej!5e0!3m2!1spl!2spl!4v1688185692864!5m2!1spl!2spl",
       city: "Łańcut",
       street: "ul. Podzwierzyniec 74",
       description: "W pobliżu MDK",
@@ -65,3 +65,6 @@ const useLocalisationData = () => {
 };
 
 export { useLocalisationData };
+
+
+
