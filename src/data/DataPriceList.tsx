@@ -202,7 +202,7 @@ export const DataPriceList = [
             title: "Powłoka ceramiczna",
             description: <>Mycie detailingowe wraz z dekontaminacją, jednoetapowa korekta lakieru, <b>aplikacja powłoki ceramicznej 3-letniej</b> Nasiol, niewidzialna wycieraczka GRATIS!</>,
             bolded: false,
-            price: "od 350 zł",
+            price: "od 1500 zł",
           },
           {
             title: "Niewidzialna wycieraczka",

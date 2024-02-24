@@ -1,5 +1,5 @@
 import * as React from "react";
-import type { HeadFC } from "gatsby";
+import { Script, type HeadFC } from "gatsby";
 import Seo from "../components/Seo";
 import AboutIcons from "../sections/AboutIcons";
 import About from "../sections/homepage/About";
