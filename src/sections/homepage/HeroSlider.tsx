@@ -1,17 +1,17 @@
-import React                    from "react";
-import styled                   from "styled-components";
-import {Autoplay}               from "swiper";
-import {EffectFade}             from "swiper";
-import {Navigation, Pagination} from "swiper";
-import {Swiper, SwiperSlide}    from "swiper/react";
-import ButtonPrimary            from "../../components/buttons/ButtonPrimary";
-import {Wrapper}                from "../../components/layout/Wrapper";
-import {TitleSm}                from "../../components/typography/TitleSm";
-import {TitleXl}                from "../../components/typography/TitleXl";
-import {useHeroSliderData}      from "../../hooks/heroSliderData/useHeroSliderData";
+import React from "react";
+import styled from "styled-components";
+import { Autoplay } from "swiper";
+import { EffectFade } from "swiper";
+import { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import ButtonPrimary from "../../components/buttons/ButtonPrimary";
+import { Wrapper } from "../../components/layout/Wrapper";
+import { TitleSm } from "../../components/typography/TitleSm";
+import { TitleXl } from "../../components/typography/TitleXl";
+import { useHeroSliderData } from "../../hooks/heroSliderData/useHeroSliderData";
 
 // slide arrows
-import ChevronLeft  from "../../assets/icons/chevron_left.svg";
+import ChevronLeft from "../../assets/icons/chevron_left.svg";
 import ChevronRight from "../../assets/icons/chevron_right.svg";
 
 // swiper styles
@@ -53,7 +53,7 @@ const Container = styled.div`
                     height: 100%;
                     object-fit: cover;
                     object-position: left;
-                    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+                    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
                     }
                 }
             }
@@ -86,7 +86,7 @@ const Container = styled.div`
                         background: linear-gradient(90.07deg, #003370 3.38%, rgba(0, 51, 112, 0) 106.14%);
                     }
 
-                    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+                    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
                         &:nth-child(1) {
                             background: linear-gradient(180deg, rgba(0, 51, 112, 0) 0%, rgba(60, 191, 240, 0.61) 100%);
                             z-index: 2;
@@ -116,7 +116,7 @@ const Container = styled.div`
             &.swiper-slide-active {
                 .image-box {
                     transform: scale(1.06);
-                    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+                    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
                         transform: none;
                     }
                 }
@@ -140,12 +140,12 @@ const Container = styled.div`
     }
 
     .swiper-button-prev {
-        background-image: url(${ChevronLeft});
+        background-image: url(${ ChevronLeft });
         left: 36px;
     }
 
     .swiper-button-next {
-        background-image: url(${ChevronRight});
+        background-image: url(${ ChevronRight });
         right: 36px;
     }
 
@@ -168,15 +168,15 @@ const Container = styled.div`
         }
     }
 
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
         min-height: 435px;
     }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tablet}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tablet }) {
         min-height: 320px;
     }
 `;
 
-const StyledWrapper = styled(Wrapper)`
+const StyledWrapper = styled( Wrapper )`
     width: 100%;
     height: 100%;
     position: absolute;
@@ -186,7 +186,7 @@ const StyledWrapper = styled(Wrapper)`
     z-index: 4;
     display: flex;
     align-items: center;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.phoneBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
         align-items: flex-start;
         padding-top: 200px;
     }
@@ -194,84 +194,84 @@ const StyledWrapper = styled(Wrapper)`
 
 const ButtonWrapper = styled.div`
     margin-top: 36px;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
         margin-top: 24px;
     }
 `;
 
 const SlideTextBox = styled.div`
     max-width: 860px;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopBig }) {
         max-width: 760px;
     }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
         max-width: 700px;
     }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
         max-width: 500px;
     }
 `;
 
-const StyledTitleSm = styled(TitleSm)`
-    margin-bottom: 18px;
+const StyledTitleSm = styled( TitleSm )`
+    margin-top: 18px;
     display: inline-block;
     text-transform: inherit;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
-        margin-bottom: 12px;
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
+        margin-top: 12px;
     }
 `;
 
 const HeroSlider = () => {
-  const data         = useHeroSliderData();
-  const windowGlobal = typeof window !== "undefined" && window;
+    const data = useHeroSliderData();
+    const windowGlobal = typeof window !== "undefined" && window;
 
-  return (
-    <Container>
-      <Swiper
-        modules={[Navigation, Pagination, EffectFade, Autoplay]}
-        navigation
-        pagination={{clickable: true}}
-        autoplay={{delay: 8000}}
-        speed={1000}
-        effect="fade"
-        loop={true}
-      >
-        {
-          data.map((slide, i) => (
-            <SwiperSlide key={i}>
-              <div className="image-box">
+    return (
+        <Container>
+            <Swiper
+                modules={[ Navigation, Pagination, EffectFade, Autoplay ]}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 8000 }}
+                speed={1000}
+                effect="fade"
+                loop={true}
+            >
                 {
-                  windowGlobal && window.innerWidth > 601 ? (
-                    <>{slide.image}</>
-                  ) : (
-                    <>{slide.imageMobile}</>
-                  )
+                    data.map( ( slide, i ) => (
+                        <SwiperSlide key={i}>
+                            <div className="image-box">
+                                {
+                                    windowGlobal && window.innerWidth > 601 ? (
+                                        <>{slide.image}</>
+                                    ) : (
+                                        <>{slide.imageMobile}</>
+                                    )
+                                }
+                            </div>
+                            <div className="slide-background">
+                                <div />
+                                <div />
+                                <div />
+                            </div>
+                            <StyledWrapper>
+                                <SlideTextBox>
+                                    <TitleXl as="div" isWhite>
+                                        {slide.title}
+                                    </TitleXl>
+                                    <StyledTitleSm as="span" isWhite>
+                                        {slide.subtitle}
+                                    </StyledTitleSm>
+                                    <ButtonWrapper>
+                                        <ButtonPrimary href={`tel:${ slide.ctaUrl }`} title="Zadzwoń do KLIMFIX">{slide.ctaText}</ButtonPrimary>
+                                    </ButtonWrapper>
+                                </SlideTextBox>
+                            </StyledWrapper>
+                        </SwiperSlide>
+                    ) )
                 }
-              </div>
-              <div className="slide-background">
-                <div/>
-                <div/>
-                <div/>
-              </div>
-              <StyledWrapper>
-                <SlideTextBox>
-                  <StyledTitleSm as="span" isWhite>
-                    {slide.subtitle}
-                  </StyledTitleSm>
-                  <TitleXl as="div" isWhite>
-                    {slide.title}
-                  </TitleXl>
-                  <ButtonWrapper>
-                    <ButtonPrimary href={`tel:${slide.ctaUrl}`} title="Zadzwoń do KLIMFIX">{slide.ctaText}</ButtonPrimary>
-                  </ButtonWrapper>
-                </SlideTextBox>
-              </StyledWrapper>
-            </SwiperSlide>
-          ))
-        }
-      </Swiper>
-    </Container>
-  );
+            </Swiper>
+        </Container>
+    );
 };
 
 export default HeroSlider;
