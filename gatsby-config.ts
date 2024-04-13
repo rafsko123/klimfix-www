@@ -49,7 +49,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Poppins\:200,300,400,600,700,800,900`,
+          `Poppins\:200,300,400,500,600,700,800,900`,
           `Mitr\:200,300,400,500,600,700,800,900`,
 
         ],

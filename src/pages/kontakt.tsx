@@ -4,9 +4,6 @@ import { Wrapper } from "../components/layout/Wrapper";
 import Seo from "../components/Seo";
 import { TitleLg } from "../components/typography/TitleLg";
 import { TitleSm } from "../components/typography/TitleSm";
-
-import PhoneIcon from "../assets/icons/phone.svg";
-import EnvelopeIcon from "../assets/icons/envelope.svg";
 import ContactBg from "../assets/images/contact/contact-bg.png";
 import MobileBg from "../assets/images/contact/mobile-bg.png";
 import Watermark from "../assets/icons/watermark_contact.svg";
@@ -20,19 +17,19 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  @media screen and (max-width: ${ ( { theme } ) =>
-    theme.breakpoints.laptopSmall }) {
-    height: 600px;
-    min-height: 0;
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopSmall }) {
   }
   @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
-    min-height: 320px;
     padding-right: 0;
   }
   @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
+    min-height: 0;
+    height: auto;
     background-image: url(${ MobileBg });
     background-position: bottom;
     background-size: 100% auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 `;
 
@@ -57,14 +54,7 @@ const Column = styled.div`
 `;
 
 const TextBox = styled.div`
-  max-width: 500px;
-  padding-left: 100px;
-  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
-    padding-left: 56px;
-  }
-  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tablet }) {
-    padding-left: 0;
-  }
+  max-width: 600px;
 `;
 
 const StyledTitleSm = styled( TitleSm )`
@@ -83,89 +73,105 @@ const ContactBox = styled.div`
   @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
     margin-top: 36px;
   }
-  @media screen and (max-width: ${ ( { theme } ) =>
-    theme.breakpoints.laptopSmall }) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopSmall }) {
     margin-top: 24px;
   }
 `;
 
 const ContactBoxItem = styled.div`
-  display: flex;
-
-  &:not(:last-child) {
+  padding-left: 24px;
+  margin-bottom: 52px;
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #00C9FF;
+  }
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
     margin-bottom: 36px;
-    @media screen and (max-width: ${ ( { theme } ) =>
-    theme.breakpoints.laptopBig }) {
-      margin-bottom: 24px;
-    }
-    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
-      margin-bottom: 18px;
-    }
+  }
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
+    padding-left: 16px;
   }
 `;
 
-const ContactBoxIcon = styled.div`
-  flex-shrink: 0;
-  margin-right: 42px;
-  padding-top: 4px;
-
-  img {
-    width: 42px;
-    height: 42px;
-  }
-
-  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopBig }) {
-    margin-right: 36px;
-    img {
-      width: 36px;
-      height: 36px;
-    }
-  }
-  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
-    margin-right: 24px;
-    img {
-      width: 24px;
-      height: 24px;
-    }
-  }
-  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tablet }) {
-    img {
-      width: 20px;
-      height: 20px;
-    }
-  }
-`;
-
-const ContactBoxDetail = styled.div``;
-
-const ContactBoxLink = styled.a`
+const CBITitle = styled.h3`
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
   color: #fff;
-  font-size: 32px;
-  font-weight: 300;
   font-family: "Poppins", sans-serif;
-  display: inline-block;
-  transition: 0.3s color ease;
-
-  &:hover {
-    color: ${ ( { theme } ) => theme.colors.primary };
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
+    font-size: 15px;
+    margin-bottom: 13px;
   }
+`
 
+const CTALine = styled.div`
+  font-weight: 300;
+  font-size: 15px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  a {
+    font-weight: 300;
+    display: inline-block;
+    transition: .3s color ease;
+    &:hover {
+      color: #00C9FF;
+    }
+  }
   &:not(:last-child) {
-    margin-bottom: 8px;
+      margin-bottom: 13px;
   }
-
-  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopBig }) {
-    font-size: 24px;
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
+      font-size: 14px;
+        &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+      @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
+        font-size: 13px;
+      }
   }
+`
 
+const ContactAddress = styled.div`
+  padding-top: 36px;
+  display: flex;
+  font-family: "Poppins", sans-serif;
   @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
-    font-size: 18px;
+    padding-top: 12px;
   }
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
+    flex-direction: column;
+  }
+`
 
-  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tablet }) {
-    font-size: 14px;
+const CAItem = styled.div`
+  font-size: 13px;
+  color: #fff;
+  &:not(:last-child) {
+    margin-right: 46px;
   }
-`;
+  span {
+    display: block;
+    font-weight: 300;
+    b {
+      font-weight: 500
+    }
+  }
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
+  &:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 18px;
+  }
+  }
+`
+
 
 const Contact = () => {
   return (
@@ -179,45 +185,48 @@ const Contact = () => {
           <Column>
             <TextBox>
               <StyledTitleSm isWhite as="h1">
-                Masz pytania?
+                Zarezerwuj wizytę już dziś!
               </StyledTitleSm>
               <TitleLg isWhite as="h2">
-                SKONTAKTUJ SIĘ <br />Z NAMI
+                SKONTAKTUJ SIĘ Z NAMI
               </TitleLg>
               <ContactBox>
                 <ContactBoxItem>
-                  <ContactBoxIcon>
-                    <img src={PhoneIcon} alt="" />
-                  </ContactBoxIcon>
-                  <ContactBoxDetail>
-                    <ContactBoxLink
-                      href="tel:+48534520569"
-                      title="Telefon kontaktowy"
-                    >
-                      +48 534 520 569
-                    </ContactBoxLink>
-                    <br />
-                    <ContactBoxLink
-                      href="tel:+48531086370"
-                      title="Telefon kontaktowy"
-                    >
-                      +48 531 086 370
-                    </ContactBoxLink>
-                  </ContactBoxDetail>
+                  <CBITitle>Obsługa klienta Rzeszów i Tyczyn</CBITitle>
+                  <div className="cta-wrapper">
+                    <CTALine>
+                      <a href="tel:+48534520569" title="Telefon kontaktowy do obsługi klienta Rzeszów i Tyczyn">+48 534 520 569</a>
+                      &nbsp;&nbsp;/&nbsp;&nbsp;
+                      <a href="tel:+48531086370" title="Telefon kontaktowy do obsługi klienta Rzeszów i Tyczyn">+48 531 086 370</a>
+                    </CTALine>
+                    <CTALine>
+                      <a href="mailto:kontakt@klimfix.pl" title="Adres email kontaktowy do obsługi klienta">kontakt@klimfix.pl</a>
+                    </CTALine>
+                  </div>
                 </ContactBoxItem>
                 <ContactBoxItem>
-                  <ContactBoxIcon>
-                    <img src={EnvelopeIcon} alt="" />
-                  </ContactBoxIcon>
-                  <ContactBoxDetail>
-                    <ContactBoxLink
-                      href="mailto:kontakt@klimfix.pl"
-                      title="Adres email - klimfix"
-                    >
-                      kontakt@klimfix.pl
-                    </ContactBoxLink>
-                  </ContactBoxDetail>
+                  <CBITitle>Obsługa klienta Łańcut</CBITitle>
+                  <div className="cta-wrapper">
+                    <CTALine>
+                      <a href="tel:+48662646311" title="Telefon kontaktowy do obsługi klienta Łańcut">+48 662 646 311</a>
+                    </CTALine>
+                    <CTALine>
+                      <a href="mailto:kontakt@klimfix.pl" title="Adres email kontaktowy do obsługi klienta">kontakt@klimfix.pl</a>
+                    </CTALine>
+                  </div>
                 </ContactBoxItem>
+                <ContactAddress>
+                  <CAItem>
+                    <span><b>KLIMFIX Sp. z o.o.</b></span>
+                    <span>ul. J i J Śniadeckich 20D/7,</span>
+                    <span>35-006 Rzeszów</span>
+                  </CAItem>
+                  <CAItem>
+                    <span>NIP: 5170444690</span>
+                    <span>REGON: 527812419</span>
+                    <span>KRS: 0001088782</span>
+                  </CAItem>
+                </ContactAddress>
               </ContactBox>
             </TextBox>
           </Column>
