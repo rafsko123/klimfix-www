@@ -13,37 +13,37 @@ import Watermark from "../assets/icons/watermark_contact.svg";
 
 const Container = styled.div`
   position: relative;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${ ( { theme } ) => theme.colors.secondary };
   min-height: 635px;
   height: 100vh;
-  background-image: url(${ContactBg});
+  background-image: url(${ ContactBg });
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  @media screen and (max-width: ${({ theme }) =>
-      theme.breakpoints.laptopSmall}) {
+  @media screen and (max-width: ${ ( { theme } ) =>
+    theme.breakpoints.laptopSmall }) {
     height: 600px;
     min-height: 0;
   }
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.tabletBig}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
     min-height: 320px;
     padding-right: 0;
   }
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.phoneBig}) {
-    background-image: url(${MobileBg});
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
+    background-image: url(${ MobileBg });
     background-position: bottom;
     background-size: 100% auto;
   }
 `;
 
-const StyledWrapper = styled(Wrapper)`
+const StyledWrapper = styled( Wrapper )`
   display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
   position: relative;
   z-index: 3;
-  background-image: url(${Watermark});
+  background-image: url(${ Watermark });
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 50%;
@@ -51,7 +51,7 @@ const StyledWrapper = styled(Wrapper)`
 
 const Column = styled.div`
   width: 50%;
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tablet }) {
     width: 100%;
   }
 `;
@@ -59,32 +59,32 @@ const Column = styled.div`
 const TextBox = styled.div`
   max-width: 500px;
   padding-left: 100px;
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.tabletBig}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
     padding-left: 56px;
   }
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tablet }) {
     padding-left: 0;
   }
 `;
 
-const StyledTitleSm = styled(TitleSm)`
+const StyledTitleSm = styled( TitleSm )`
   margin-bottom: 18px;
   text-transform: inherit;
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
     margin-bottom: 12px;
   }
 `;
 
 const ContactBox = styled.div`
   margin-top: 64px;
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.laptopBig}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopBig }) {
     margin-top: 56px;
   }
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
     margin-top: 36px;
   }
-  @media screen and (max-width: ${({ theme }) =>
-      theme.breakpoints.laptopSmall}) {
+  @media screen and (max-width: ${ ( { theme } ) =>
+    theme.breakpoints.laptopSmall }) {
     margin-top: 24px;
   }
 `;
@@ -94,11 +94,11 @@ const ContactBoxItem = styled.div`
 
   &:not(:last-child) {
     margin-bottom: 36px;
-    @media screen and (max-width: ${({ theme }) =>
-        theme.breakpoints.laptopBig}) {
+    @media screen and (max-width: ${ ( { theme } ) =>
+    theme.breakpoints.laptopBig }) {
       margin-bottom: 24px;
     }
-    @media screen and (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
       margin-bottom: 18px;
     }
   }
@@ -114,21 +114,21 @@ const ContactBoxIcon = styled.div`
     height: 42px;
   }
 
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.laptopBig}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopBig }) {
     margin-right: 36px;
     img {
       width: 36px;
       height: 36px;
     }
   }
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
     margin-right: 24px;
     img {
       width: 24px;
       height: 24px;
     }
   }
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tablet }) {
     img {
       width: 20px;
       height: 20px;
@@ -147,22 +147,22 @@ const ContactBoxLink = styled.a`
   transition: 0.3s color ease;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${ ( { theme } ) => theme.colors.primary };
   }
 
   &:not(:last-child) {
     margin-bottom: 8px;
   }
 
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.laptopBig}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopBig }) {
     font-size: 24px;
   }
 
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
     font-size: 18px;
   }
 
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tablet }) {
     font-size: 14px;
   }
 `;
