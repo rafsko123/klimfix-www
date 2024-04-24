@@ -334,7 +334,10 @@ const FooterKeyWords = styled.div`
   padding-top: 24px;
   padding-bottom: 16px;
   @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
-    display: none;
+    padding-bottom: 60px;
+  }
+  @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
+    width: 100%;
   }
 `
 
@@ -376,6 +379,21 @@ const FKWWrapper = styled( Wrapper )`
           width: 1px;
           height: 7px;
         }
+      }
+    }
+  }
+   @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.phoneBig }) {
+    span {
+      padding-right: 0;
+      margin-right: 0;
+      text-align: center;
+      font-size: 11px;
+      &:after {
+        display: none !important;
+      }
+      &:not(:last-child) {
+        padding-right: 0;
+        margin-right: 0;
       }
     }
   }

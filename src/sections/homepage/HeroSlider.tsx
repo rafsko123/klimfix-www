@@ -200,7 +200,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const SlideTextBox = styled.div`
-    max-width: 860px;
+    max-width: 1040px;
     @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopBig }) {
         max-width: 760px;
     }
@@ -218,6 +218,9 @@ const StyledTitleSm = styled( TitleSm )`
     text-transform: inherit;
     @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
         margin-top: 12px;
+    }
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
+        max-width: 400px;
     }
 `;
 
