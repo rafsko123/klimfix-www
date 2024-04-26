@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 
 export const useLocalisationImage = () => {
-  return useStaticQuery(graphql`
+  return useStaticQuery( graphql`
     query {
       localisation_1: file(
         relativePath: { eq: "images/localisations/localisation-1.png" }
@@ -40,7 +40,7 @@ export const useLocalisationImage = () => {
         }
       }
       localisation_5: file(
-        relativePath: { eq: "images/localisations/localisation-5.png" }
+        relativePath: { eq: "images/localisations/audi-1.png" }
       ) {
         childImageSharp {
           fluid(maxWidth: 500, quality: 100) {

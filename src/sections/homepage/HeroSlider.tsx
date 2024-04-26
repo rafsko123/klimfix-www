@@ -194,8 +194,14 @@ const StyledWrapper = styled( Wrapper )`
 
 const ButtonWrapper = styled.div`
     margin-top: 36px;
+    a {
+        height: 64px;
+    }
     @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
         margin-top: 24px;
+        a {
+            height: 44px;
+        }
     }
 `;
 

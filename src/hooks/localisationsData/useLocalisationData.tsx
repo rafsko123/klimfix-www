@@ -58,7 +58,7 @@ const useLocalisationData = () => {
       street: "ul.  Pasterczyka 1a",
       description: "Warsztat",
       days: "pon-sob",
-      hours: "9:00 - 20:00",
+      hours: "9:00 - 18:00",
       open: true,
     },
   ];

@@ -1,12 +1,12 @@
-import {graphql, useStaticQuery} from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 
 export const ArticleImage = () => {
-  const images = useStaticQuery(graphql`
+  const images = useStaticQuery( graphql`
     query {
       hero: file(
         relativePath: {
-          eq: "images/articles/article-4/hero.png"
+          eq: "images/articles/article-3/hero.png"
         }
       ) {
         childImageSharp {
@@ -17,7 +17,7 @@ export const ArticleImage = () => {
       },
       list: file(
         relativePath: {
-          eq: "images/articles/article-4/list.png"
+          eq: "images/articles/article-3/list.png"
         }
       ) {
         childImageSharp {
@@ -28,7 +28,7 @@ export const ArticleImage = () => {
       },
       full: file(
         relativePath: {
-          eq: "images/articles/article-4/full.png"
+          eq: "images/articles/article-3/full.png"
         }
       ) {
         childImageSharp {
