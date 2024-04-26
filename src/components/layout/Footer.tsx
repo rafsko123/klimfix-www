@@ -490,7 +490,7 @@ const Footer = () => {
                 <ListLine className="custom-line">
                   <a href="https://goo.gl/maps/TKQu14gUWnQQ5kdj8" target="_blank" rel="noopener" className="custom-box">
                     <ListSpan><b>Rzeszów</b> Krakowska 20,</ListSpan><br />
-                    <ListSpan>35-111 Rzeszów</ListSpan>
+                    <ListSpan>35-001 Rzeszów</ListSpan>
                   </a>
                   <a href="https://goo.gl/maps/QkxjwD9eEyM9W5Fk7" target="_blank" rel="noopener" className="custom-box">
                     <ListSpan><b>Rzeszów</b> Podwisłocze 30,</ListSpan><br />

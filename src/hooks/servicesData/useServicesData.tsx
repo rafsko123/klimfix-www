@@ -3,6 +3,7 @@ import React from "react";
 import SnowflakeIcon from "../../assets/icons/snowflake.svg";
 import VacuumImage from "../../assets/icons/vacuum.svg";
 import ToolsIcon from "../../assets/icons/tools.svg";
+import CarIcon from "../../assets/icons/car.svg";
 
 
 const useServicesData = () => {
@@ -30,8 +31,8 @@ const useServicesData = () => {
     },
     {
       title: "Car Wrapping",
-      description: <>Unikalny wygląd auta i&nbsp;ochrona przed uszkodzenia -&nbsp;okleimy Twój pojazd wysokiej jakości folią, by jak najdłużej wyglądał jakby dopiero wyjechał z salonu</>,
-      icon: SnowflakeIcon,
+      description: <>Unikalny wygląd auta i&nbsp;ochrona przed uszkodzeniami -&nbsp;okleimy Twój pojazd wysokiej jakości folią, by jak najdłużej wyglądał jakby dopiero wyjechał z salonu</>,
+      icon: CarIcon,
       slug: "/uslugi-i-cennik#wraping",
       buttonText: "Sprawdź cennik",
     },
