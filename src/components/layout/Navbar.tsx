@@ -1,16 +1,16 @@
-import {Link}              from "gatsby";
-import {FunctionComponent} from "react";
-import {useState}          from "react";
-import {useEffect}         from "react";
-import React               from "react";
-import styled              from "styled-components";
-import {dataMenu}          from "../../data/DataMenu";
-import classNames          from "classnames";
-import {useLocation}       from "@reach/router";
+import { Link } from "gatsby";
+import { FunctionComponent } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import React from "react";
+import styled from "styled-components";
+import { dataMenu } from "../../data/DataMenu";
+import classNames from "classnames";
+import { useLocation } from "@reach/router";
 
-import LogoIcon     from "../../assets/icons/logo.svg";
+import LogoIcon from "../../assets/icons/logo.svg";
 import LogoDarkIcon from "../../assets/icons/logo_dark.svg";
-import PhoneIcon    from "../../assets/icons/phone.svg";
+import PhoneIcon from "../../assets/icons/phone.svg";
 
 
 const Container = styled.div`
@@ -50,17 +50,17 @@ const Wrapper = styled.div`
         height: 65px;
     }
 
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
         padding-left: 24px;
         height: 60px !important;
     }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
         padding-right: 36px;
         height: 50px !important;
     }
 `;
 
-const LogoBox = styled(Link)`
+const LogoBox = styled( Link )`
     display: inline-flex;
     align-items: center;
 
@@ -74,7 +74,7 @@ const NavbarMenuBox = styled.div`
     display: flex;
     height: 100%;
     align-items: center;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
         position: fixed;
         top: 0;
         left: 0;
@@ -103,14 +103,17 @@ const NavbarMenuBox = styled.div`
 const NavbarList = styled.ul`
     display: flex;
     margin-right: 64px;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
         margin-right: 48px;
     }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopSmall }) {
+        margin-right: 24px;
+    }
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
         width: 300px;
         height: 100%;
         flex-direction: column;
-        background-color: ${({theme}) => theme.colors.secondary};
+        background-color: ${ ( { theme } ) => theme.colors.secondary };
         background-image: linear-gradient(180deg, rgba(0, 51, 112, 0) 40%, rgba(60, 191, 240, 0.81) 100%);
         margin-right: 0;
         padding: 100px 36px 0 36px;
@@ -123,17 +126,17 @@ const NavbarListItem = styled.li`
         margin-right: 78px;
     }
 
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
-        &:not(:last-child) {
-            margin-right: 48px;
-        }
-    }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopBig }) {
         &:not(:last-child) {
             margin-right: 36px;
         }
     }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopSmall }) {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
         text-align: right;
         &:not(:last-child) {
             margin-right: 0;
@@ -142,7 +145,7 @@ const NavbarListItem = styled.li`
     }
 `;
 
-const NavbarLink = styled(Link)`
+const NavbarLink = styled( Link )`
     color: #fff;
     display: inline-block;
     text-transform: uppercase;
@@ -152,17 +155,17 @@ const NavbarLink = styled(Link)`
 
     &.menu-scrolled,
     &.white-background {
-        color: ${({theme}) => theme.colors.secondary};
+        color: ${ ( { theme } ) => theme.colors.secondary };
     }
 
     &:hover {
-        color: ${({theme}) => theme.colors.primary};
+        color: ${ ( { theme } ) => theme.colors.primary };
     }
 
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
         font-size: 14px;
     }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
         font-size: 18px;
         color: #fff !important;
     }
@@ -170,7 +173,7 @@ const NavbarLink = styled(Link)`
 
 const NavbarShowOnMobile = styled.div`
     display: none;
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
         display: flex;
         align-items: center;
         position: fixed;
@@ -184,29 +187,29 @@ const NavbarCTA = styled.a`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: ${({theme}) => theme.colors.primary};
+    background-color: ${ ( { theme } ) => theme.colors.primary };
     padding: 4px 64px;
     letter-spacing: 0.045em;
     height: 100%;
     text-transform: uppercase;
     font-family: 'Mitr', sans-serif;
-    color: ${({theme}) => theme.colors.white};
+    color: ${ ( { theme } ) => theme.colors.white };
     transition: .3s background-color ease;
 
     &:hover {
-        background-color: ${({theme}) => theme.colors.primaryHue};
+        background-color: ${ ( { theme } ) => theme.colors.primaryHue };
     }
 
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptop}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptop }) {
         padding: 4px 48px;
         font-size: 14px;
     }
 
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.laptopSmall}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.laptopSmall }) {
         padding: 4px 32px;
 
     }
-    @media screen and (max-width: ${({theme}) => theme.breakpoints.tabletBig}) {
+    @media screen and (max-width: ${ ( { theme } ) => theme.breakpoints.tabletBig }) {
         display: none;
     }
 `;
@@ -214,7 +217,7 @@ const NavbarCTA = styled.a`
 const NavbarMobileCTA = styled.a`
     width: 32px;
     height: 32px;
-    background-image: url(${PhoneIcon});
+    background-image: url(${ PhoneIcon });
     display: inline-block;
     background-repeat: no-repeat;
     background-size: contain;
@@ -247,7 +250,7 @@ const Hamburger = styled.div`
     &.menu-scrolled {
         span {
             transition: .3s background-color ease;
-            background-color: ${({theme}) => theme.colors.secondary};
+            background-color: ${ ( { theme } ) => theme.colors.secondary };
         }
     }
 
@@ -255,7 +258,7 @@ const Hamburger = styled.div`
         transform: rotate(-45deg);
 
         span {
-            background-color: ${({theme}) => theme.colors.primary} !important;
+            background-color: ${ ( { theme } ) => theme.colors.primary } !important;
 
             &:nth-child(1) {
                 transform: rotate(90deg);
@@ -269,82 +272,82 @@ const Hamburger = styled.div`
     }
 `;
 
-const Navbar: FunctionComponent<{ path: string }> = ({path}) => {
-  const [whiteBackground, setWhiteBackground] = useState<boolean>(false);
-  const [menuScrolled, setMenuScrolled]       = useState<boolean>(false);
-  const [menuActive, setMenuActive]           = useState<boolean>(false);
-  const location                              = useLocation();
+const Navbar: FunctionComponent<{ path: string }> = ( { path } ) => {
+  const [ whiteBackground, setWhiteBackground ] = useState<boolean>( false );
+  const [ menuScrolled, setMenuScrolled ] = useState<boolean>( false );
+  const [ menuActive, setMenuActive ] = useState<boolean>( false );
+  const location = useLocation();
 
   const handleScroll = () => {
-    if (window.scrollY > 60) {
-      setMenuScrolled(true);
+    if ( window.scrollY > 60 ) {
+      setMenuScrolled( true );
     } else {
-      setMenuScrolled(false);
+      setMenuScrolled( false );
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+  useEffect( () => {
+    window.addEventListener( "scroll", handleScroll );
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener( "scroll", handleScroll );
     };
-  }, []);
+  }, [] );
 
-  useEffect(() => {
-    if (path === "/uslugi-i-cennik/" || path === "/nasze-lokalizacje/" || path === "/strefa-wiedzy/" || path === "/polityka-prywatnosci/") {
-      setWhiteBackground(true);
+  useEffect( () => {
+    if ( path === "/uslugi-i-cennik/" || path === "/nasze-lokalizacje/" || path === "/strefa-wiedzy/" || path === "/polityka-prywatnosci/" ) {
+      setWhiteBackground( true );
     } else {
-      setWhiteBackground(false);
+      setWhiteBackground( false );
     }
-  }, [location]);
+  }, [ location ] );
 
   const handleClick = () => {
-    document.body.classList.toggle("scroll-lock");
-    setMenuActive(!menuActive);
+    document.body.classList.toggle( "scroll-lock" );
+    setMenuActive( !menuActive );
   };
 
   const handleLinkClick = () => {
-    setMenuActive(false);
-    document.body.classList.remove("scroll-lock");
+    setMenuActive( false );
+    document.body.classList.remove( "scroll-lock" );
   };
 
-  const cx = classNames({
+  const cx = classNames( {
     "white-background": whiteBackground,
-    "menu-scrolled":    menuScrolled,
-    "menu-active":      menuActive,
-  });
+    "menu-scrolled": menuScrolled,
+    "menu-active": menuActive,
+  } );
 
   return (
     <Container className={cx}>
       <Wrapper className={cx}>
         <LogoBox to={"/"} title="Klimfix- Strona główna">
           {
-            (whiteBackground || menuScrolled) ? (
-              <img src={LogoDarkIcon} alt=""/>
+            ( whiteBackground || menuScrolled ) ? (
+              <img src={LogoDarkIcon} alt="" />
             ) : (
-              <img src={LogoIcon} alt=""/>
+              <img src={LogoIcon} alt="" />
             )
           }
         </LogoBox>
         <NavbarMenuBox className={menuActive ? "menu-active" : ""}>
           <NavbarList className={menuActive ? "menu-active" : ""}>
             {
-              dataMenu.map((element, i) => (
+              dataMenu.map( ( element, i ) => (
                 <NavbarListItem key={i}>
                   <NavbarLink to={element.slug} title={element.title} className={cx} onClick={handleLinkClick}>
                     {element.title}
                   </NavbarLink>
                 </NavbarListItem>
-              ))
+              ) )
             }
           </NavbarList>
           <NavbarCTA href="tel:+48534520569" title="Telefon kontaktowy">Zadzwoń</NavbarCTA>
         </NavbarMenuBox>
         <NavbarShowOnMobile>
-          <NavbarMobileCTA href="tel:+48534520569" title="Telefon kontaktowy"/>
+          <NavbarMobileCTA href="tel:+48534520569" title="Telefon kontaktowy" />
           <Hamburger className={cx} onClick={() => handleClick()}>
-            <span/>
-            <span/>
+            <span />
+            <span />
           </Hamburger>
         </NavbarShowOnMobile>
       </Wrapper>
