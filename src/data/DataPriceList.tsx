@@ -18,7 +18,7 @@ export const DataPriceList = [
     content: [
       {
         title: null,
-        description: <>W sytuacji rozszczelnienia układu w&nbsp;terminie do 30 dni od wykonania usługi napełniamy układ w cenie 60zł (czynnnik R134a) lub&nbsp;100zł (czynnik R1234yf) bez względu na ilość czynnika (po zwróceniu wydruku z maszyny). Po wykryciu usterki należy niezwłocznie ją zgłosić w naszym serwisie przed jej usunięciem we&nbsp;własnym zakresie.</>,
+        description: <>W sytuacji rozszczelnienia układu w&nbsp;terminie do 30 dni od wykonania usługi napełniamy układ w cenie 60zł (czynnik R134a) lub&nbsp;100zł (czynnik R1234yf) bez względu na ilość czynnika (po zwróceniu wydruku z maszyny). Po wykryciu usterki należy niezwłocznie ją zgłosić w naszym serwisie przed jej usunięciem we&nbsp;własnym zakresie.</>,
         list: [
           {
             title: "Usługa serwisowa dla czynnika R134a",
@@ -28,7 +28,7 @@ export const DataPriceList = [
           },
           {
             title: "Usługa serwisowa dla czynnika R1234yf",
-            description: "Identyfikacja czynnika, test szczelności metodą prózniową, ozonowanie. Pierwsze i każde następne 10-100g czynnika - 80zł.",
+            description: "Identyfikacja czynnika, test szczelności metodą próżniową, ozonowanie. Pierwsze i każde następne 10-100g czynnika - 80zł.",
             bolded: true,
             price: "180 zł",
           },
