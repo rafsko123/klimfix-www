@@ -24,13 +24,13 @@ export const DataPriceList = [
             title: "Usługa serwisowa dla czynnika R134a",
             description: "Test szczelności metodą próżniową, ozonowanie. Pierwsze i każde następne 10-100g czynnika - 30zł.",
             bolded: true,
-            price: "130 zł",
+            price: "150 zł",
           },
           {
             title: "Usługa serwisowa dla czynnika R1234yf",
             description: "Identyfikacja czynnika, test szczelności metodą prózniową, ozonowanie. Pierwsze i każde następne 10-100g czynnika - 80zł.",
             bolded: true,
-            price: "160 zł",
+            price: "180 zł",
           },
           {
             title: "Wymiana zaworka",
